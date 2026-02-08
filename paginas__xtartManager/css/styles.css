@@ -2,6 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    background-color: #d8d8d8;
 }
 
 :root {
@@ -9,6 +10,7 @@ body {
     --Color-Secundario: #00c896;
     --Color-Terciario: #7fffd4;
     --Color-Fondo: #121212;
+    --Color-Fondo-Secundario: #1E1E1E;
     --Color-Texto: #d1d1d1;
     --fuente-principal: 'Times New Roman', Times, serif;
 }
@@ -18,7 +20,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--Color-Fondo);
-    padding: 20px;
+    padding-left: 10px;
 }
 
 .header__left {
@@ -69,4 +71,319 @@ body {
 
 .header__link:hover {
     color: var(--Color-Secundario);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Color-Fondo-Secundario);
+}
+
+.menu__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.menu__link {
+    text-decoration: none;
+    font-family: var(--fuente-principal);
+    color: var(--Color-Texto);
+}
+
+.menu__link:hover {
+    color: var(--Color-Secundario);
+}
+
+.hero {
+    height: 500px;
+    width: 100%;
+    background:
+        linear-gradient(180deg,
+            rgba(46, 46, 46, 0.6),
+            rgba(30, 30, 30, 0.6)),
+        url(/imagenes/hero__copadelrey.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero__boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero__text {
+    font-family: var(--fuente-principal);
+    color: var(--Color-Texto);
+}
+
+.hero__buttom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Color-Fondo);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hero__link {
+    text-decoration: none;
+    font-family: var(--fuente-principal);
+    color: var(--Color-Texto);
+}
+
+.hero__buttom:hover {
+    background-color: var(--Color-Secundario);
+    cursor: pointer;
+}
+
+.news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.news__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news__title {
+    font-family: var(--fuente-principal);
+    color: var(--Color-Fondo);
+}
+
+.news__main {
+    display: flex;
+}
+
+.news__box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "a a b c"
+        "a a b c"
+        "d d e e"
+        "d d e e";
+    height: 700px;
+    width: 1200px;
+    gap: 50px;
+}
+
+.news__item {
+    grid-area: a;
+    background:
+        linear-gradient(180deg,
+            rgba(46, 46, 46, 0.6),
+            rgba(30, 30, 30, 0.6)),
+        url(/imagenes/goleador.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: 10px;
+    transition: background-size 0.5s ease;
+    cursor: pointer;
+}
+
+.news__item:hover {
+    background-size: 105%;
+}
+
+.news__text {
+    font-family: var(--fuente-principal);
+    color: var(--Color-Texto);
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+}
+
+.news__item--2 {
+    grid-area: b;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+
+
+}
+
+.news__img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.45s ease;
+
+}
+
+.news__img:hover {
+    transform: scale(1.08);
+}
+
+.news__container {
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.news__text--color {
+    font-family: var(--fuente-principal);
+    color: var(--Color-Fondo);
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+}
+
+.news__item--3 {
+    grid-area: c;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.news__img--size {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.45s ease;
+}
+
+.news__img--size:hover {
+    transform: scale(1.08);
+}
+
+
+.news__container--size {
+    background-color: var(--Color-Primario);
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.news__buttom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news__boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.news__boton:hover {
+    background-color: var(--Color-Secundario);
+    cursor: pointer;
+}
+
+.news__link {
+    text-decoration: none;
+    color: var(--Color-Primario);
+}
+
+.news__item--4 {
+    grid-area: d;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.news__item--5 {
+    grid-area: e;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.news__bot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.news__buttom--color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 400px;
+    background-color: var(--Color-Primario);
+}
+
+.news__buttom--color:hover {
+    background-color: var(--Color-Secundario);
+    cursor: pointer;
+}
+
+.news__link--color {
+    text-decoration: none;
+    color: var(--Color-Texto);
+    padding: 20px;
+    font-size: 20px;
 }
