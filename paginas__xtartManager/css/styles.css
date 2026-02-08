@@ -1,0 +1,128 @@
+
+
+/* ---------------------------Root--------------------------- */
+:root{
+    --fuente-Principal: Arial;
+    --color-Principal-Supercopa:rgb(1, 3, 146);
+}
+
+
+/* ---------------------------Web Supercopa--------------------------- */
+
+/* -----------------Header de prueba----------------- */
+header{
+    background-color: var(--color-Principal-Supercopa);
+    height: 60px;
+}
+
+/* -----------------Body----------------- */
+.body__Supercopa{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente-Principal);
+}
+
+/* -----------------Hero----------------- */
+
+.hero{
+    background-image: url(/paginas__xtartManager/imagenes/Supercopa/supercopa_2026_Salzburgo.jpg);
+    background-color: rgba(212, 212, 212, 0.979);
+    background-blend-mode: multiply;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 120px;
+    width: 100%;
+    background-color: rgba(1, 4, 146, 0.63);
+    
+}
+
+/* -----------------News----------------- */
+
+.news{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.news__title{
+    text-align: left;
+    width: 96%;
+    margin-left: 3%;
+
+}
+
+.news__imgBig{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.news__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.news__article{
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    gap: 20px;
+    grid-auto-rows: 350px;
+    padding-top: 0;
+}
+
+.article{
+    /* background-color: var(--color-Principal-Supercopa); */
+    border: 1px solid var(--color-Principal-Supercopa);
+    box-shadow: 0px 4px 5px 1px var(--color-Principal-Supercopa);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows:  40% 60%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.article--1{
+    grid-column: span 2;
+    
+}
+
+.article--6{
+    grid-column: span 2;
+    
+}
+
+.article__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+
+/* -----------------Know----------------- */
+
