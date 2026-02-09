@@ -11,6 +11,7 @@ body {
     --Color-Terciario: #7fffd4;
     --Color-Fondo: #121212;
     --Color-Fondo-Secundario: #1E1E1E;
+    --Color-Fondo-Primario: white;
     --Color-Texto: #d1d1d1;
     --fuente-principal: 'Times New Roman', Times, serif;
 }
@@ -30,11 +31,6 @@ body {
     gap: 30px;
 }
 
-.header__title {
-    font-family: var(--fuente-principal);
-    color: var(--Color-Texto);
-    font-size: 20px;
-}
 
 .header__title:hover {
     color: var(--Color-Secundario);
@@ -42,8 +38,8 @@ body {
 }
 
 .header__img {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 100px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -110,7 +106,7 @@ body {
         linear-gradient(180deg,
             rgba(46, 46, 46, 0.6),
             rgba(30, 30, 30, 0.6)),
-        url(/imagenes/hero__copadelrey.jpg);
+        url(/imagenes/copaDelRey/hero__copadelrey.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -166,7 +162,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 .news__top {
@@ -195,7 +190,7 @@ body {
         "d d e e";
     height: 700px;
     width: 1200px;
-    gap: 50px;
+    gap: 20px;
 }
 
 .news__item {
@@ -204,7 +199,7 @@ body {
         linear-gradient(180deg,
             rgba(46, 46, 46, 0.6),
             rgba(30, 30, 30, 0.6)),
-        url(/imagenes/goleador.jpg);
+        url(/imagenes/copaDelRey/goleador.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -256,7 +251,7 @@ body {
 }
 
 .news__container {
-    background-color: white;
+    background-color: var(--Color-Fondo-Primario);
     width: 100%;
     height: 20%;
     border-bottom-left-radius: 10px;
@@ -330,7 +325,7 @@ body {
     align-items: center;
     padding: 10px;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--Color-Fondo-Primario);
 }
 
 .news__boton:hover {
@@ -386,4 +381,82 @@ body {
     color: var(--Color-Texto);
     padding: 20px;
     font-size: 20px;
+}
+
+.equipos {
+    width: 85%;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: var(--Color-Texto);
+}
+
+.equipos__title {
+    font-family: var(--fuente-principal);
+    color: var(--Color-Primario);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 80px;
+
+}
+
+.carrusel {
+    display: flex;
+    height: 60vh;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.carrusel__item {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: var(--Color-Fondo-Primario);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 1.2s ease;
+}
+
+.carrusel__img {
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+}
+
+
+.carrusel__info {
+    height: 30%;
+    padding: 18px;
+    background: var(--Color-Fondo-Primario);
+    color: var(--Color-Primario);
+    font-family: var(--fuente-principal);
+    position: static;
+
+}
+
+
+.carrusel__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--Color-Primario);
+    font-family: var(--fuente-principal);
+}
+
+
+.carrusel__text {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--Color-Primario);
+    font-family: var(--fuente-principal);
+    text-decoration: none;
+}
+
+
+.carrusel__item:hover {
+    flex: 3;
+    transform: translateY(-3px);
 }
