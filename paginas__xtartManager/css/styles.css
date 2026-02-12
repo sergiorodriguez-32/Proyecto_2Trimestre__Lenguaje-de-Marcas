@@ -17,7 +17,7 @@ body {
     --cdr-color-fondo-contact: #c5c4c4;
     --cdr-color-texto: #d1d1d1;
     --eq-color-hover: rgb(247, 239, 154);
-    --cdr-fuente-principal: 'Times New Roman', Times, serif;
+    --cdr-fuente-principal: 'Arial', 'Times New Roman', Times, serif;
 }
 
 /* #region HEADER */
@@ -191,6 +191,8 @@ body {
 .cdr-hero__text {
     font-family: var(--cdr-fuente-principal);
     color: var(--cdr-color-texto);
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .cdr-hero__buttom {
@@ -911,6 +913,7 @@ body {
 /* #endregion */
 
 
+
 .header__link--eq:hover {
     color: var(--eq-color-hover);
 }
@@ -926,16 +929,33 @@ body {
     max-width: 1400px;
     margin: 50px auto;
     overflow: hidden;
+    margin-top: 100px;
+    padding: 30px;
+    margin-top: 0px;
+
+}
+
+.eq-carrousel__heading {
+    top: 10px;
+    left: 10px;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: var(--cdr-fuente-principal);
+    color: var(--cdr-color-primario);
+    z-index: 15;
 }
 
 .eq-carrousel {
     display: flex;
     gap: 25px;
     transition: transform 1.2s ease-in-out;
+    flex-wrap: nowrap;
+    width: 95%;
+
 }
 
 .eq-carrousel__card {
-    min-width: 300px;
+    flex: 0 0 300px;
     height: 350px;
     background-color: var(--cdr-color-fondo-primario);
     border-radius: 12px;
@@ -953,6 +973,16 @@ body {
 .eq-carrousel__card:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
+}
+
+.eq-carrousel__badge {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .eq-carrousel__img {
@@ -1026,4 +1056,58 @@ body {
 
 .eq-carrousel-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.eq-carrousel__card--size {
+    flex: 0 0 300px;
+    height: 450px;
+    background-color: var(--cdr-color-fondo-primario);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.eq-carrousel__img--size {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.eq-carrousel__card--size:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.eq-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.eq-hero__container {
+    height: 600px;
+    width: 100%;
+    background:
+        url(/imagenes/equipos/plantilla\ barcelona.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
