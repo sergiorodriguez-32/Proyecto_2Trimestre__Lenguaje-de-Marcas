@@ -501,16 +501,19 @@ body {
     right: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     backdrop-filter: blur(3px);
-    padding: 18px;
+    padding: 12px;
     transform: translateY(100%);
     opacity: 0;
     transition: transform 0.45s ease, opacity 0.45s ease;
     z-index: 2;
+
+
 }
 
 .cdr-carrusel__item:hover .cdr-carrusel__info {
     transform: translateY(0);
     opacity: 1;
+
 
 }
 
@@ -532,7 +535,7 @@ body {
 }
 
 .cdr-carrusel__item:hover {
-    flex: 3;
+    flex: 1.6;
     transform: translateY(-3px);
 }
 
