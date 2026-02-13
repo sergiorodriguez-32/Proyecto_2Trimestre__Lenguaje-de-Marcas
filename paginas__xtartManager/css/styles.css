@@ -28,6 +28,7 @@ body {
     align-items: center;
     background-color: var(--cdr-color-fondo-secundario);
     padding-left: 10px;
+
 }
 
 .header__left {
@@ -500,16 +501,20 @@ body {
     right: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     backdrop-filter: blur(3px);
-    padding: 18px;
+    padding: 12px;
     transform: translateY(100%);
     opacity: 0;
     transition: transform 0.45s ease, opacity 0.45s ease;
     z-index: 2;
+
+
 }
 
 .cdr-carrusel__item:hover .cdr-carrusel__info {
     transform: translateY(0);
     opacity: 1;
+
+
 }
 
 .cdr-carrusel__title {
@@ -530,7 +535,7 @@ body {
 }
 
 .cdr-carrusel__item:hover {
-    flex: 3;
+    flex: 1.6;
     transform: translateY(-3px);
 }
 
@@ -855,7 +860,7 @@ body {
     gap: 12px;
 }
 
-.right__boton.right__boton--cdr {
+.right__boton--cdr {
     background-color: var(--cdr-color-primario);
     border-radius: 12px;
     padding: 8px 14px;
@@ -865,7 +870,7 @@ body {
     cursor: pointer;
 }
 
-.right__boton.right__boton--cdr:hover {
+.right__boton--cdr:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     background-color: var(--cdr-color-secundario);
@@ -898,8 +903,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
     width: 90%;
+
 }
 
 .conditions__list {
@@ -910,6 +916,8 @@ body {
 }
 
 /* #endregion */
+
+/* #region eq */
 
 .eq-hero {
     display: flex;
@@ -964,16 +972,18 @@ body {
 }
 
 .eq-carrousel {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
     gap: 25px;
     transition: transform 1.2s ease-in-out;
-    flex-wrap: nowrap;
     width: 95%;
+    align-items: stretch;
 
 }
 
 .eq-carrousel__card {
-    flex: 0 0 300px;
+    width: 300px;
     height: 350px;
     background-color: var(--cdr-color-fondo-primario);
     border-radius: 12px;
@@ -1077,8 +1087,8 @@ body {
 }
 
 .eq-carrousel__card--size {
-    flex: 0 0 300px;
-    height: 450px;
+    width: 300px;
+    height: 350px;
     background-color: var(--cdr-color-fondo-primario);
     border-radius: 12px;
     text-align: center;
@@ -1467,3 +1477,165 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
     background-color: rgba(247, 239, 154, 0.674);
 }
+
+/* #endregion */
+
+
+/* #region hm */
+
+
+.hm-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hm-hero__container {
+    height: 600px;
+    width: 100%;
+    background:
+        url(/imagenes/index/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.hm-copaDelRey {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.hm-copaDelRey__container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    height: 700px;
+    border-radius: 18px;
+    overflow: hidden;
+    background-image:
+        linear-gradient(120deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25)),
+        url("/imagenes/index/background__copadelrey.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.hm-copaDelRey__ticker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    z-index: 5;
+    overflow: hidden;
+}
+
+.hm-copaDelRey__ticker-track {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.hm-copaDelRey__ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: var(--cdr-fuente-principal);
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--cdr-color-fondo-primario);
+    animation: hmTicker 30s linear infinite;
+}
+
+
+@keyframes hmTicker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.hm-copaDelRey__content {
+    position: relative;
+    z-index: 2;
+    padding: 90px 30px 30px 30px;
+    display: grid;
+    gap: 20px;
+}
+
+.hm-copaDelRey__top {
+    display: grid;
+    gap: 10px;
+    max-width: 900px;
+}
+
+.hm-copaDelRey__title {
+    margin: 0;
+    font-family: var(--cdr-fuente-principal);
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--cdr-color-texto);
+}
+
+.hm-copaDelRey__heroTitle {
+    margin: 0;
+    font-family: var(--cdr-fuente-principal);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 1.1;
+    color: var(--cdr-color-texto);
+
+}
+
+
+.hm-copaDelRey__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.hm-copaDelRey__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: var(--cdr-fuente-principal);
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--cdr-color-primario);
+    background: var(--cdr-color-texto);
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hm-copaDelRey__btn:hover {
+    transform: translateY(-2px);
+    background: var(--eq-color-hover);
+}
+
+.hm-copaDelRey__btn--left {
+    justify-self: start;
+}
+
+.hm-copaDelRey__btn--right {
+    justify-self: end;
+}
+
+/* #endregion */
