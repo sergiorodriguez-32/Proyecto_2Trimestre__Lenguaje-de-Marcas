@@ -1648,24 +1648,41 @@ body {
 
 /* ---------------------------Web Supercopa--------------------------- */
 
-/* -----------------Header de prueba----------------- */
-.cs-header{
-    background-color: var(--color-Principal-Supercopa);
-    height: 60px;
+/* -------Elementos comunes de la página SC------- */
+.sc-body{
+    font-family: var(--fuente-Principal);
 }
 
-/* -----------------Body----------------- */
-.sc-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--fuente-Principal);
+.sc-boxButton{
+    display: flex;
+    gap: 30px;
+}
+
+.sc-button{
+    background-color: var(--color-Principal-Supercopa);
+    border-radius: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.sc-boxButton--center{
+    justify-content: center;
+    align-items: center;
+}
+
+.sc-boxButton--padding{
+    padding: 30px;
+}
+
+.sc-a{
+    text-decoration: none;
+    color: white;
 }
 
 /* -----------------Hero----------------- */
 
 .sc-hero{
-    background-image: url(/paginas__xtartManager/imagenes/Supercopa/supercopa_2026_Salzburgo.jpg);
+    background-image: url(/imagenes/Supercopa/supercopa_2026_Salzburgo.jpg);
     background-color: rgba(212, 212, 212, 0.979);
     background-blend-mode: multiply;
     height: 400px;
@@ -1696,7 +1713,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    margin-top: 30px;
 }
 
 .sc-news__box{
@@ -1704,14 +1721,17 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0;
     
 }
 
 .sc-news__title{
-    text-align: left;
-    width: 96%;
-    margin-left: 3%;
-
+    font-size: 35px;
+    width: 80%;
+    
 }
 
 .sc-news__imgBig{
@@ -1743,7 +1763,7 @@ body {
 }
 
 .sc-article{
-    /* background-color: var(--color-Principal-Supercopa); */
+    background-color: white;
     border: 1px solid var(--color-Principal-Supercopa);
     box-shadow: 0px 4px 5px 1px var(--color-Principal-Supercopa);
     border-radius: 20px;
@@ -1796,5 +1816,101 @@ body {
 /* -----------------Know----------------- */
 
 .sc-know{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
 
+.sc-know__title{
+    font-size: 35px;
+    width: 80%;
+    
+}
+
+.sc-know__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0;
+    
+}
+
+.sc-know__box2{
+    border: 1px solid var(--color-Principal-Supercopa);
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+}
+
+.sc-know__boxImg{
+    border-radius: 50%;
+    height: 250px; width: 250px;
+    padding: 20px;
+}
+
+.sc-know__highlighted{
+    color: orange;
+    font-size: 18px;
+    font-weight: 300;
+
+}
+
+.sc-know__newsTitle{
+    font-weight: 400;
+}
+
+.sc-know__text{
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--color-date-Supercopa);
+
+}
+
+/* -----------------Match----------------- */
+
+.sc-match{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sc-match__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0;
+
+}
+
+.sc-match__title{
+    font-size: 35px;
+    width: 80%;
+    
+}
+
+.sc-match__next{
+    display: flex;
+    gap: 80px;
+}
+
+.sc-match__logo{
+    height: 80px; width: 80px;
+    
+}
+
+.sc-match__team{
+    display: flex;
+    gap: 20px;
 }
