@@ -473,6 +473,7 @@ body {
     width: 95%;
     margin: 0 auto;
     border-radius: 10px;
+    padding: 15px;
 }
 
 .cdr-carrusel__item {
@@ -486,12 +487,19 @@ body {
     text-decoration: none;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: all 1.2s ease;
+
 }
 
 .cdr-carrusel__img {
     width: 100%;
-    height: 70%;
+    height: 100%;
     object-fit: contain;
+    transition: transform .8s ease;
+}
+
+.cdr-carrusel__item:hover .cdr-carrusel__img {
+    transform: translateY(-12%);
+
 }
 
 .cdr-carrusel__info {
@@ -507,15 +515,16 @@ body {
     transition: transform 0.45s ease, opacity 0.45s ease;
     z-index: 2;
 
-
 }
 
 .cdr-carrusel__item:hover .cdr-carrusel__info {
     transform: translateY(0);
     opacity: 1;
-
-
+    height: auto;
+    padding: 12px;
 }
+
+
 
 .cdr-carrusel__title {
     margin: 0;
@@ -537,6 +546,7 @@ body {
 .cdr-carrusel__item:hover {
     flex: 1.6;
     transform: translateY(-3px);
+
 }
 
 .cdr-contact {
