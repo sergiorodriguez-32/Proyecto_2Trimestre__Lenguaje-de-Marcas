@@ -601,16 +601,16 @@ body {
     height: 30px;
     width: 30px;
     object-fit: cover;
-    margin-bottom: 15px;
+    transition: all 0.8s ease;
 }
 
 .cdr-contact__img:hover {
     background-color: var(--cdr-color-secundario);
     cursor: pointer;
     border-radius: 50%;
-    padding: 3px;
-    box-sizing: border-box;
-    transition: all 0.6s ease;
+    padding: 5px;
+    transform: translateY(-2px);
+
 }
 
 .cdr-contact__right {
@@ -854,6 +854,7 @@ body {
     height: 30px;
     width: 30px;
     object-fit: cover;
+    transition: all 0.8s ease;
 }
 
 .left__img.left__img--cdr:hover {
@@ -862,7 +863,7 @@ body {
     background-color: var(--cdr-color-secundario);
     border-radius: 50%;
     padding: 5px;
-    transition: all 0.6s ease;
+
 }
 
 .footer__right {
@@ -1647,5 +1648,6 @@ body {
 .hm-copaDelRey__btn--right {
     justify-self: end;
 }
+
 
 /* #endregion */
