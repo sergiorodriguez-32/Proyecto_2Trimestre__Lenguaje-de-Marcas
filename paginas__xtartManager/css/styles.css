@@ -2051,3 +2051,80 @@ body {
 .sc-match__AlignmentImg{
     height: 550px;
 }
+
+
+/* -----------------Football Teams----------------- */
+
+.sc-footballTeams{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+.sc-footballTeams__box{
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.sc-footballTeams__tittle{
+    font-size: 35px;
+    
+}
+
+.sc-footballTeams__img{
+    height: 100px; width: 100px;
+    object-fit: contain;
+}
+
+.sc-footballTeams__wrapper{
+    overflow: hidden;
+    width: 100%;
+}
+
+.sc-footballTeams__carrusel{
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.sc-footballTeams__card{
+    width: 280px; height: 200px;
+    background: var(--sc-color-lineaDivisora);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sc-footballTeams__button{
+    position: absolute;
+    top: 62%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.sc-footballTeams__button--left{
+    left: 20px;
+    
+}
+
+.sc-footballTeams__button--right{
+    right: 22px;
+}
