@@ -1,9 +1,11 @@
+html,
 body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     background-color: #d8d8d8;
     overflow-x: hidden;
+    height: 100%;
 }
 
 :root {
@@ -305,11 +307,12 @@ body {
     border-radius: 10px;
     overflow: hidden;
     height: 100%;
+    width: 100%;
 }
 
 .cdr-news__img {
     width: 100%;
-    height: 80%;
+    height: 75%;
     object-fit: cover;
     display: block;
     border-top-left-radius: 10px;
@@ -327,13 +330,14 @@ body {
 .cdr-news__container {
     background-color: var(--cdr-color-fondo-primario);
     width: 100%;
-    height: 20%;
+    height: 25%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .cdr-news__text--color {
@@ -477,6 +481,7 @@ body {
     width: 95%;
     margin: 0 auto;
     border-radius: 10px;
+    padding: 15px;
 }
 
 .cdr-carrusel__item {
@@ -490,12 +495,19 @@ body {
     text-decoration: none;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: all 1.2s ease;
+
 }
 
 .cdr-carrusel__img {
     width: 100%;
-    height: 70%;
+    height: 100%;
     object-fit: contain;
+    transition: transform .8s ease;
+}
+
+.cdr-carrusel__item:hover .cdr-carrusel__img {
+    transform: translateY(-12%);
+
 }
 
 .cdr-carrusel__info {
@@ -511,15 +523,16 @@ body {
     transition: transform 0.45s ease, opacity 0.45s ease;
     z-index: 2;
 
-
 }
 
 .cdr-carrusel__item:hover .cdr-carrusel__info {
     transform: translateY(0);
     opacity: 1;
-
-
+    height: auto;
+    padding: 12px;
 }
+
+
 
 .cdr-carrusel__title {
     margin: 0;
@@ -541,6 +554,7 @@ body {
 .cdr-carrusel__item:hover {
     flex: 1.6;
     transform: translateY(-3px);
+
 }
 
 .cdr-contact {
@@ -595,16 +609,16 @@ body {
     height: 30px;
     width: 30px;
     object-fit: cover;
-    margin-bottom: 15px;
+    transition: all 0.8s ease;
 }
 
 .cdr-contact__img:hover {
     background-color: var(--cdr-color-secundario);
     cursor: pointer;
     border-radius: 50%;
-    padding: 3px;
-    box-sizing: border-box;
-    transition: all 0.6s ease;
+    padding: 5px;
+    transform: translateY(-2px);
+
 }
 
 .cdr-contact__right {
@@ -723,6 +737,7 @@ body {
     flex-direction: column;
     background-color: var(--cdr-color-fondo-secundario);
     width: 100%;
+    margin-top: auto;
 }
 
 .footer__container {
@@ -817,10 +832,6 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
 .footer__under {
     display: flex;
     justify-content: space-between;
@@ -848,6 +859,7 @@ body {
     height: 30px;
     width: 30px;
     object-fit: cover;
+    transition: all 0.8s ease;
 }
 
 .left__img.left__img--cdr:hover {
@@ -856,7 +868,7 @@ body {
     background-color: var(--cdr-color-secundario);
     border-radius: 50%;
     padding: 5px;
-    transition: all 0.6s ease;
+
 }
 
 .footer__right {
@@ -2135,3 +2147,5 @@ body {
 .sc-footballTeams__button--right{
     right: 22px;
 }
+
+/* #endregion */
