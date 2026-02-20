@@ -20,6 +20,10 @@ body {
     --cdr-color-texto: #d1d1d1;
     --eq-color-hover: rgb(247, 239, 154);
     --cdr-fuente-principal: 'Arial', 'Times New Roman', Times, serif;
+    --fuente-Principal: "Roboto", sans-serif;;
+    --color-Principal-Supercopa:rgb(26, 28, 141); /* definitivo */
+    --color-date-Supercopa: rgb(108, 106, 106);
+    --sc-color-lineaDivisora:rgb(216, 216, 216);
 }
 
 /* #region HEADER */
@@ -1515,6 +1519,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
 
@@ -1650,5 +1655,497 @@ body {
     justify-self: end;
 }
 
+/* #endregion */
+
+
+
+/* ---------------------------Web Supercopa--------------------------- */
+
+/* -------Elementos comunes de la página SC------- */
+.sc-body{
+    font-family: var(--fuente-Principal);
+}
+
+.sc-boxButton{
+    display: flex;
+    gap: 30px;
+}
+
+.sc-button{
+    background-color: var(--color-Principal-Supercopa);
+    border-radius: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.sc-boxButton--center{
+    justify-content: center;
+    align-items: center;
+}
+
+.sc-boxButton--padding{
+    padding: 30px;
+}
+
+.sc-a{
+    text-decoration: none;
+    color: white;
+}
+
+/* -----------------Hero----------------- */
+
+.sc-hero{
+    background-image: url(/imagenes/Supercopa/supercopa_2026_Salzburgo.jpg);
+    background-color: rgba(180, 180, 180, 0.979);
+    background-blend-mode: multiply;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    color: var(--color-Principal-Supercopa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sc-hero__box{
+    background-color: rgba(255, 255, 255, 0.836);
+    border: 1px solid var(--color-Principal-Supercopa);
+    box-shadow: 0px 4px 5px 1px var(--color-Principal-Supercopa);
+    border-radius: 20px;
+    
+}
+
+.sc-hero__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 120px;
+    width: 600px;
+    
+}
+
+/* -----------------News----------------- */
+
+.sc-news{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sc-news__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0;
+
+}
+
+.sc-news__title{
+    font-size: 35px;
+    width: 80%;
+
+}
+
+.sc-news__imgBig{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.sc-news__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.sc-news__article{
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    gap: 20px;
+    grid-auto-rows: 350px;
+    padding-top: 0;
+}
+
+.sc-article{
+    background-color: white;
+    border: 1px solid var(--color-Principal-Supercopa);
+    box-shadow: 0px 4px 5px 1px var(--color-Principal-Supercopa);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows:  40% 60%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.sc-article--1{
+    grid-column: span 2;
+
+}
+
+.sc-article--6{
+    grid-column: span 2;
+
+}
+
+.sc-article__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.sc-article__title{
+    font-weight: 500;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+    color: var(--color-Principal-Supercopa);
+}
+
+.sc-article__date{
+    font-weight: 400;
+    color: var(--color-date-Supercopa);
+    text-align: end;
+    margin: 0;
+    padding: 0;
+}
+
+.sc-article__text{
+    font-weight: 400;
+    padding: 0;
+    text-align: start;
+}
+
+/* -----------------Know----------------- */
+
+.sc-know{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sc-know__title{
+    font-size: 35px;
+    width: 80%;
+
+}
+
+.sc-know__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0;
+
+}
+
+.sc-know__box2{
+    border: 1px solid var(--color-Principal-Supercopa);
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+}
+
+.sc-know__boxImg{
+    border-radius: 50%;
+    height: 250px; width: 250px;
+    padding: 20px;
+}
+
+.sc-know__highlighted{
+    color: orange;
+    font-size: 18px;
+    font-weight: 300;
+
+}
+
+.sc-know__newsTitle{
+    font-weight: 400;
+}
+
+.sc-know__text{
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--color-date-Supercopa);
+
+}
+
+/* -----------------Match----------------- */
+
+.sc-match{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    
+}
+
+.sc-match__box{
+    display: grid;
+    grid-template-areas: 
+    "a a"
+    "b c";
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 0;
+    gap: 60px;
+
+}
+
+.sc-match__boxLeft{
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sc-match__boxRight{
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+}
+
+.sc-match__title{
+    grid-area: a;
+    font-size: 35px;
+    width: 80%;
+
+}
+
+.sc-match__next{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--sc-color-lineaDivisora);
+}
+
+.sc-match__logo{
+    height: 80px; width: 80px;
+
+}
+
+.sc-match__team{
+    display: flex;
+    gap: 20px;
+
+}
+
+.sc-match__points{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.sc-match__pointBox{
+    display: flex;
+    gap: 80px;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.sc-match__resultsBox{
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    margin-top: -50px;
+    color: var(--color-date-Supercopa);
+    border-bottom: 1px solid var(--sc-color-lineaDivisora);
+}
+
+.sc-match__goals{
+    display: flex;
+    gap: 80px;
+    margin: 0;
+    align-items: center;
+    border-bottom: 1px solid var(--sc-color-lineaDivisora);
+}
+
+.sc-match__goalText{
+    font-size: 20px;
+    color: var(--color-date-Supercopa);
+}
+
+.sc-match__goalNumber{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sc-match__information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--sc-color-lineaDivisora);
+}
+
+.sc-match__stadiumImg{
+    border-radius: 20%;
+    height: 150px; width: 250px;
+    padding: 20px;
+    object-fit: cover;
+}
+
+.sc-match__informationTitle{
+    font-size: 35px;
+    margin: 0;
+}
+
+.sc-match__informationText{
+    font-size: 20px;
+    color: var(--color-date-Supercopa);
+}
+
+.sc-match__referee{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--sc-color-lineaDivisora);
+}
+
+.sc-match__refereeBox{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.sc-match__refereeTitle{
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.sc-match__highlight{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sc-match__refereeName{
+    font-size: 18px;
+    color: var(--color-date-Supercopa);
+}
+
+.sc-match__Alignment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 1px solid var(--sc-color-lineaDivisora);
+}
+
+.sc-match__AlignmentTitle{
+    font-size: 25px;
+}
+
+.sc-match__AlignmentImg{
+    height: 550px;
+}
+
+
+/* -----------------Football Teams----------------- */
+
+.sc-footballTeams{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+.sc-footballTeams__box{
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.sc-footballTeams__tittle{
+    font-size: 35px;
+    
+}
+
+.sc-footballTeams__img{
+    height: 100px; width: 100px;
+    object-fit: contain;
+}
+
+.sc-footballTeams__wrapper{
+    overflow: hidden;
+    width: 100%;
+}
+
+.sc-footballTeams__carrusel{
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.sc-footballTeams__card{
+    width: 280px; height: 200px;
+    background: var(--sc-color-lineaDivisora);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sc-footballTeams__button{
+    position: absolute;
+    top: 62%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.sc-footballTeams__button--left{
+    left: 20px;
+    
+}
+
+.sc-footballTeams__button--right{
+    right: 22px;
+}
 
 /* #endregion */

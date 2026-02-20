@@ -75,3 +75,61 @@ window.addEventListener('load', () => {
         });
     });
 });
+
+
+
+// Rotación de los equipos clasificados en la página de la Supercopa
+
+const carrusel = document.querySelector(".sc-footballTeams__carrusel");
+const container = document.querySelector(".sc-footballTeams__wrapper");
+const btnLeft = document.querySelector(".sc-footballTeams__button--left");
+const btnRight = document.querySelector(".sc-footballTeams__button--right");
+
+btnRight.addEventListener("click", () => {
+    const first = carrusel.firstElementChild;
+    carrusel.appendChild(first);
+});
+
+btnLeft.addEventListener("click", () => {
+    const last = carrusel.lastElementChild;
+    carrusel.prepend(last);
+});
+
+let autoplay;
+
+/* Mover hacia la derecha automáticamente */
+function moverDerecha() {
+    const cardWidth = carrusel.querySelector(".sc-footballTeams__card").offsetWidth + 20;
+
+    carrusel.style.transform = `translateX(-${cardWidth}px)`;
+
+    setTimeout(() => {
+        carrusel.style.transition = "none";
+        carrusel.appendChild(carrusel.firstElementChild);
+        carrusel.style.transform = "translateX(0)";
+
+        // Forzar reflow para reactivar transición
+        carrusel.offsetHeight;
+        carrusel.style.transition = "transform 0.6s ease";
+    }, 600);
+}
+
+
+/* Iniciar movimiento automático */
+function iniciarAutoplay() {
+    autoplay = setInterval(moverDerecha, 2500); 
+}
+
+/* Parar movimiento */
+function pararAutoplay() {
+    clearInterval(autoplay);
+}
+
+/* Se mueve solo */
+iniciarAutoplay();
+
+/* Se pausa al pasar el ratón */
+container.addEventListener("mouseenter", pararAutoplay);
+
+/* Se reanuda al quitar el ratón */
+container.addEventListener("mouseleave", iniciarAutoplay);
