@@ -78,58 +78,60 @@ window.addEventListener('load', () => {
 
 
 
-// Rotación de los equipos clasificados en la página de la Supercopa
+// Rotación de los equipos clasificados en la página de la Supercopa y calendario de partidos
 
-const carrusel = document.querySelector(".sc-footballTeams__carrusel");
-const container = document.querySelector(".sc-footballTeams__wrapper");
-const btnLeft = document.querySelector(".sc-footballTeams__button--left");
-const btnRight = document.querySelector(".sc-footballTeams__button--right");
+document.querySelectorAll(".sc-footballTeams__box, .p-days__box")
+.forEach(box => {
 
-btnRight.addEventListener("click", () => {
-    const first = carrusel.firstElementChild;
-    carrusel.appendChild(first);
-});
+    const carrusel = box.querySelector("[class$='__carrusel']");
+    const container = box.querySelector("[class$='__wrapper']");
+    const btnLeft = box.querySelector("[class$='__button--left']");
+    const btnRight = box.querySelector("[class$='__button--right']");
 
-btnLeft.addEventListener("click", () => {
-    const last = carrusel.lastElementChild;
-    carrusel.prepend(last);
-});
+    let autoplay;
 
-let autoplay;
+    function moverDerecha() {
+        const card = carrusel.firstElementChild;
+        const cardWidth = card.offsetWidth + 20;
 
-/* Mover hacia la derecha automáticamente */
-function moverDerecha() {
-    const cardWidth = carrusel.querySelector(".sc-footballTeams__card").offsetWidth + 20;
+        carrusel.style.transform = `translateX(-${cardWidth}px)`;
 
-    carrusel.style.transform = `translateX(-${cardWidth}px)`;
+        setTimeout(() => {
+            carrusel.style.transition = "none";
+            carrusel.appendChild(card);
+            carrusel.style.transform = "translateX(0)";
+            carrusel.offsetHeight;
+            carrusel.style.transition = "transform 0.6s ease";
+        }, 600);
+    }
 
-    setTimeout(() => {
+    function moverIzquierda() {
+        const last = carrusel.lastElementChild;
+        const cardWidth = last.offsetWidth + 20;
+
         carrusel.style.transition = "none";
-        carrusel.appendChild(carrusel.firstElementChild);
-        carrusel.style.transform = "translateX(0)";
+        carrusel.prepend(last);
+        carrusel.style.transform = `translateX(-${cardWidth}px)`;
 
-        // Forzar reflow para reactivar transición
         carrusel.offsetHeight;
         carrusel.style.transition = "transform 0.6s ease";
-    }, 600);
-}
+        carrusel.style.transform = "translateX(0)";
+    }
 
+    btnRight.addEventListener("click", moverDerecha);
+    btnLeft.addEventListener("click", moverIzquierda);
 
-/* Iniciar movimiento automático */
-function iniciarAutoplay() {
-    autoplay = setInterval(moverDerecha, 2500); 
-}
+    function iniciarAutoplay() {
+        autoplay = setInterval(moverDerecha, 2500);
+    }
 
-/* Parar movimiento */
-function pararAutoplay() {
-    clearInterval(autoplay);
-}
+    function pararAutoplay() {
+        clearInterval(autoplay);
+    }
 
-/* Se mueve solo */
-iniciarAutoplay();
+    iniciarAutoplay();
 
-/* Se pausa al pasar el ratón */
-container.addEventListener("mouseenter", pararAutoplay);
+    container.addEventListener("mouseenter", pararAutoplay);
+    container.addEventListener("mouseleave", iniciarAutoplay);
+});
 
-/* Se reanuda al quitar el ratón */
-container.addEventListener("mouseleave", iniciarAutoplay);

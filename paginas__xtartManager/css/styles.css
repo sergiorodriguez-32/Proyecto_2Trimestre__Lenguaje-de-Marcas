@@ -1713,7 +1713,7 @@ body {
     border: 1px solid var(--color-Principal-Supercopa);
     box-shadow: 0px 4px 5px 1px var(--color-Principal-Supercopa);
     border-radius: 20px;
-    
+
 }
 
 .sc-hero__title{
@@ -1723,7 +1723,7 @@ body {
     text-align: center;
     height: 120px;
     width: 600px;
-    
+    text-shadow: 2px 2px 4px gray;
 }
 
 /* -----------------News----------------- */
@@ -1751,6 +1751,7 @@ body {
 .sc-news__title{
     font-size: 35px;
     width: 80%;
+
 
 }
 
@@ -1900,12 +1901,12 @@ body {
     align-items: center;
     flex-direction: column;
     margin-top: 30px;
-    
+
 }
 
 .sc-match__box{
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
     "a a"
     "b c";
     width: 80%;
@@ -2089,12 +2090,12 @@ body {
     padding: 30px;
     position: relative;
     overflow: hidden;
-    
+
 }
 
 .sc-footballTeams__tittle{
     font-size: 35px;
-    
+
 }
 
 .sc-footballTeams__img{
@@ -2141,7 +2142,7 @@ body {
 
 .sc-footballTeams__button--left{
     left: 20px;
-    
+
 }
 
 .sc-footballTeams__button--right{
@@ -2150,6 +2151,178 @@ body {
 
 /* #endregion */
 
-/* #endregion */
+/* #region Web Partidos */
+
+/* ------------------------Web Partidos------------------------ */
+.p-body{
+    font-family: var(--fuente-Principal);
+}
+/* -----------------Hero----------------- */
+
+.p-hero{
+    background-image:
+        linear-gradient(rgba(105, 105, 105, 0.5), rgba(105, 105, 105, 0.5)),
+        url(/imagenes/Partidos/soccer-ball-background-vpu36rjeyfm4a74l.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.p-hero__title{
+    color: white;
+    text-shadow: 2px 2px 4px gray;
+    font-size: 60px;
+}
+
+/* -----------------Days----------------- */
+
+.p-days{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.p-days__box{
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+
+}
+
+.p-days__tittle{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.p-days__wrapper{
+    overflow: hidden;
+    width: calc(100% - 105px);
+    margin: 0 auto;
+    
+}
+
+.p-days__carrusel{
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.p-days__card{
+    width: 100px; height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.p-days__button{
+    position: absolute;
+    top: 62%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(185, 185, 185, 0.6);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+.p-days__button--left{
+    left: 20px;
+
+}
+
+.p-days__button--right{
+    right: 22px;
+}
+
+.p-days__a{
+    text-decoration: none;
+    color: black;
+
+}
+
+/* -----------------Partidos----------------- */
+
+.p-matches{
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.p-matches__box{
+    margin-left: 50px;
+}
+
+.p-matches__dayBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.p-matches__day{
+    display: flex;
+    gap: 20px;
+}
+
+
+.p-matches__h3{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.p-matches__card{
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-matches__names{
+    padding-right: 120px;
+    width: 200px; height: 100px;
+}
+
+.p-matchez__logo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.p-matches__img{
+    width: 40px; height: 40px;
+}
+
+.p-matches__time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-matches__timeText{
+    font-weight: bold;
+    margin: 2px;
+}
+
+
+
+
+
+
 
 /* #endregion */
