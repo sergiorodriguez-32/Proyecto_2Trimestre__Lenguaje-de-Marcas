@@ -40,7 +40,6 @@ body {
     align-items: center;
     background-color: var(--primary-color);
     padding-left: 10px;
-
 }
 
 .header__left {
@@ -231,7 +230,6 @@ body {
     cursor: pointer;
 }
 
-
 .cdr-main-container {
     width: 90%;
     margin: 0 auto;
@@ -280,6 +278,17 @@ body {
     width: 1200px;
     gap: 20px;
 }
+
+/*
+debería ser un solo cdr-news__item SIN grid-area: a; comun para todos, y luego 
+
+.cdr-news__item--1/a con el grid-area: a; 
+
+Haciendolo así se repite un código q no haría falta repetir y hay más cosas q cambiar si hay un fallo 
+
+ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visualizarlo
+
+*/
 
 .cdr-news__item {
     grid-area: a;
@@ -463,7 +472,6 @@ body {
     font-size: 20px;
 }
 
-
 .cdr-equipos {
     width: 100%;
     margin-top: 50px;
@@ -539,7 +547,6 @@ body {
 }
 
 
-
 .cdr-carrusel__title {
     margin: 0;
     font-size: 20px;
@@ -583,12 +590,12 @@ body {
 }
 
 .cdr-contact__title {
-    color: var(--main-black-fuente);
+    color: var(--main-black);
     font-size: 25px;
 }
 
 .cdr-contact__text {
-    color: var(--main-black-fuente);
+    color: var(--main-black);
     font-size: 18px;
 }
 
@@ -662,17 +669,17 @@ body {
     width: 100%;
 }
 
-.cdr-campo input {
+.cdr-campo input { 
     padding: 10px;
     font-size: 14px;
     flex: 1;
 }
 
-.cdr-campo-mensaje {
+.cdr-campo-mensaje { /* cdr-campo__mensaje */
     width: 100%;
 }
 
-.cdr-campo-placeholder {
+.cdr-campo-placeholder { /* cdr-campo__placeholder */
     width: 100%;
     padding: 10px;
     font-size: 14px;
@@ -681,13 +688,13 @@ body {
     box-sizing: border-box;
 }
 
-.cdr-campo-boton {
+.cdr-campo-boton { /* cdr-campo__boton */
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
-.cdr-campo--button {
+.cdr-campo--button { /* cdr-campo__buttom */
     padding: 12px 24px;
     background-color: var(--main-black);
     color: var(--tertiary-color);
@@ -695,7 +702,7 @@ body {
     cursor: pointer;
 }
 
-.cdr-campo--button:hover {
+.cdr-campo--button:hover { /* cdr-campo__buttom */
     background-color: var(--cdr-main-color);
     cursor: pointer;
 }
@@ -750,33 +757,38 @@ body {
     gap: 20px;
     padding: 20px;
 
-
 }
 
-.container__box {
+.container__box { /*footer__box*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    grid-area: a;
+    grid-area: a; /*sin esto*/
 }
 
-.container__img {
+/*
+.footer__box--a/1 { 
+    grid-area: a;
+}
+*/
+
+.container__img { /*footer__logo*/
     height: 150px;
     width: 180px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.container__box--2 {
+.container__box--2 { /*footer__box--b/2*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    grid-area: b;
+    grid-area: b; /*solo esto*/
 }
 
-.container__list {
+.container__list { /*footer__list*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -785,11 +797,28 @@ body {
     text-align: center;
 }
 
-.list__link.list__link--cdr {
+.list__link.list__link--cdr { 
     color: var(--tertiary-color);
     text-decoration: none;
     text-align: center;
 }
+
+/*
+.footer__link { 
+    color: var(--tertiary-color);
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer__link--cdr:hover {
+    color: var(--cdr-main-color);
+}
+
+.footer__link--le:hover {
+    color: var(--le-main-color);
+}
+
+*/
 
 .list__link.list__link--cdr:hover {
     color: var(--cdr-main-color);
@@ -805,7 +834,7 @@ body {
     color: var(--le-main-color);
 }
 
-.container__box--3 {
+.container__box--3 { /*poner todos los --box seguidos y con el formato de arriba*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -829,7 +858,7 @@ body {
     grid-area: e;
 }
 
-.container__title {
+.container__title { /*footer__title*/
     color: var(--tertiary-color);
     text-align: center;
     font-size: 14px;
@@ -856,9 +885,37 @@ body {
     color: var(--tertiary-color);
 }
 
-.left__link {
+.left__link { /*footer__left__link*/
     text-decoration: none;
 }
+
+/*
+.footer__left__img {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    transition: all 0.8s ease;
+}
+
+.footer__left__img--cdr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--cdr-main-color);
+    border-radius: 50%;
+    padding: 5px;
+
+}
+
+.footer__left__img--le:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--le-main-color);
+    border-radius: 50%;
+    padding: 5px;
+
+}
+
+*/
 
 .left__img.left__img--cdr {
     height: 30px;
@@ -913,6 +970,32 @@ body {
     transition: all 1.2s ease;
 }
 
+/*
+.footer__right__boton {
+    background-color: var(--main-black);
+    border-radius: 12px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.footer__right__boton--cdr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--cdr-main-color);
+    transition: all 1.2s ease;
+}
+
+.footer__right__boton--le:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--le-main-color);
+    transition: all 1.2s ease;
+}
+*/
+
 .right__boton--le {
     background-color: var(--main-black);
     border-radius: 12px;
@@ -930,24 +1013,24 @@ body {
     transition: all 1.2s ease;
 }
 
-.right__img {
+.right__img { /*footer__right__img*/
     height: 28px;
     width: 28px;
 }
 
-.right__text {
+.right__text { /*footer__right__text -- si es el mismo que footer__link habría que unificar */
     display: flex;
     flex-direction: column;
     line-height: 1.1;
     color: var(--tertiary-color);
 }
 
-.right__span {
+.right__span { /*footer__right__span*/
     font-size: 10px;
     opacity: 0.85;
 }
 
-.right__title {
+.right__title { /*footer__right__title*/
     font-size: 14px;
     font-weight: 600;
 }
@@ -961,7 +1044,7 @@ body {
 
 }
 
-.conditions__list {
+.conditions__list { /*footer__conditions__list*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -993,16 +1076,16 @@ body {
     flex-direction: column;
 }
 
-.header__link--eq:hover {
+.header__link--eq:hover { /*esto va en header*/
     color: var(--hm-main-color);
 }
 
-.dropdown__link--eq:hover {
+.dropdown__link--eq:hover { /*esto va en header*/
     background-color: var(--hm-main-color);
     color: var(--main-black);
 }
 
-.eq-carrousel-container {
+.eq-carrousel-container { /*eq-carrousel__container*/
     position: relative;
     width: 95%;
     max-width: 1400px;
@@ -1104,7 +1187,7 @@ body {
     font-weight: 900;
 }
 
-.eq-carrousel-btn {
+.eq-carrousel-btn { /*eq-carrousel__btn*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1123,15 +1206,15 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.eq-carrousel-btn--left {
+.eq-carrousel-btn--left { /*eq-carrousel__btn--left*/
     left: 10px;
 }
 
-.eq-carrousel-btn--right {
+.eq-carrousel-btn--right { /*eq-carrousel__btn--right*/
     right: 10px;
 }
 
-.eq-carrousel-btn:hover {
+.eq-carrousel-btn:hover { /*eq-carrousel__btn*/
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1167,9 +1250,6 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
 }
-
-
-
 
 .eq-alineaciones {
     position: relative;
@@ -1218,6 +1298,27 @@ body {
     gap: 5px;
     padding: 10px;
 }
+
+/*
+.eq-alineaciones__box {
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--main-white);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+    gap: 5px;
+    padding: 10px;
+}
+
+.eq-alineaciones__box--1/a {
+    grid-area: a;
+} y así con todos
+
+*/
 
 .eq-alineaciones__box--2 {
     grid-area: b;
@@ -1396,15 +1497,13 @@ body {
     max-width: 260px;
 }
 
-
-
 .eq-alineaciones__line {
     border: none;
     height: 1px;
     background: rgba(0, 0, 0, .08);
 }
 
-.eq-alineaciones__box:hover,
+.eq-alineaciones__box:hover, /*este se pondría solo al común, no debería hacer falta ponerselo a todos los demás*/
 .eq-alineaciones__box--2:hover,
 .eq-alineaciones__box--3:hover,
 .eq-alineaciones__box--4:hover,
@@ -1480,23 +1579,23 @@ body {
 }
 
 
-.list__link.list__link--eq {
+.list__link.list__link--eq { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
     color: var(--tertiary-color);
     text-decoration: none;
     text-align: center;
 }
 
-.list__link.list__link--eq:hover {
+.list__link.list__link--eq:hover { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
     color: var(--hm-main-color);
 }
 
-.left__img.left__img--eq {
+.left__img.left__img--eq { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
     height: 30px;
     width: 30px;
     object-fit: cover;
 }
 
-.left__img.left__img--eq:hover {
+.left__img.left__img--eq:hover { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
     background-color: rgba(247, 239, 154, 0.674);
@@ -1505,7 +1604,7 @@ body {
     transition: all 0.6s ease;
 }
 
-.right__boton.right__boton--eq {
+.right__boton.right__boton--eq { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
     background-color: var(--main-black);
     border-radius: 12px;
     padding: 8px 14px;
@@ -1516,7 +1615,7 @@ body {
     transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
 
-.right__boton.right__boton--eq:hover {
+.right__boton.right__boton--eq:hover { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
     background-color: rgba(247, 239, 154, 0.674);
@@ -1585,13 +1684,13 @@ body {
     overflow: hidden;
 }
 
-.hm-copaDelRey__ticker-track {
+.hm-copaDelRey__ticker-track { /*hm-copaDelRey__ticker__track*/
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.hm-copaDelRey__ticker-text {
+.hm-copaDelRey__ticker-text { /*hm-copaDelRey__ticker__text*/
     display: inline-block;
     white-space: nowrap;
     font-weight: 900;
@@ -1601,7 +1700,7 @@ body {
 }
 
 
-@keyframes hmTicker {
+@keyframes hmTicker { /*esta bien pero ns si seria más legible he-ticker, como idea*/
     0% {
         transform: translateX(100%);
     }
@@ -1708,7 +1807,7 @@ body {
     padding: 30px;
 }
 
-.sc-a{
+.sc-a{ /*si se pudiera a lo mejor sc-link queda mejor q solo a*/
     text-decoration: none;
     color: white;
 }
@@ -1773,10 +1872,9 @@ body {
     font-size: 35px;
     width: 80%;
 
-
 }
 
-.sc-news__imgBig{
+.sc-news__imgBig{ /*diferencia actual entre  imgBig y img -- a nivel estilo, me refiero -- habría q unificar*/
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1883,14 +1981,14 @@ body {
 
 }
 
-.sc-know__box2{
+.sc-know__box2{ /* sc-know__card o sc-know__container podría ser ??? porq tengan más sentido las etiquetas, box2 en este caso me parece un poco ambiguo, pero tmpo esta  mas asiq se puede quedar así*/
     border: 1px solid var(--sc-main-color);
     border-radius: 10px;
     display: flex;
     padding: 20px;
 }
 
-.sc-know__boxImg{
+.sc-know__boxImg{ /*sc-know__img -- se puede, know NO tiene más imagenes*/
     border-radius: 50%;
     height: 250px; width: 250px;
     padding: 20px;
@@ -1903,7 +2001,7 @@ body {
 
 }
 
-.sc-know__newsTitle{
+.sc-know__newsTitle{ /*sc-know__title -- se puede, know NO tiene más titulos */
     font-weight: 400;
 }
 
@@ -2011,12 +2109,12 @@ body {
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__goalText{
+.sc-match__goalText{ /*debería ser goals -- puede quedarse sc-match__goalsText o sc-match__goal__text pero el estilo superior es goals NO goal*/
     font-size: 20px;
     color: var(--sc-contrast-color);
 }
 
-.sc-match__goalNumber{
+.sc-match__goalNumber{ /*debería ser goals -- puede quedarse sc-match__goalsNumber o sc-match__goal__number pero el estilo superior es goals NO goal*/
     font-size: 40px;
     font-weight: bold;
     margin: 0;
@@ -2030,14 +2128,14 @@ body {
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__stadiumImg{
+.sc-match__stadiumImg{ 
     border-radius: 20%;
     height: 150px; width: 250px;
     padding: 20px;
     object-fit: cover;
 }
 
-.sc-match__informationTitle{
+.sc-match__informationTitle{ 
     font-size: 35px;
     margin: 0;
 }
@@ -2059,7 +2157,7 @@ body {
     gap: 150px;
 }
 
-.sc-match__refereeTitle{
+.sc-match__refereeTitle{ /*visualmente no hay diferencia entre refereeTitle y AlignmentTitle -- no se podría hacer sc-match__title -- y poner las diferencias entre los dos a los div de fuera o abajo??? */
     display: flex;
     font-size: 25px;
     font-weight: bold;
@@ -2077,7 +2175,7 @@ body {
     color: var(--sc-contrast-color);
 }
 
-.sc-match__Alignment{
+.sc-match__Alignment{ /*es una tontería pero si están todos en minúscula no debería haber 1 en mayúsculas sc-match__alignment */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2085,7 +2183,7 @@ body {
     border-left: 1px solid var(--tertiary-color);
 }
 
-.sc-match__AlignmentTitle{
+.sc-match__AlignmentTitle{ /*lo comentado en referee*/
     font-size: 25px;
 }
 
@@ -2096,7 +2194,7 @@ body {
 
 /* -----------------Football Teams----------------- */
 
-.sc-footballTeams{
+.sc-footballTeams{ /*está bien así pero podría ser tmb solo sc-teams */
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -2268,7 +2366,7 @@ body {
     right: 22px;
 }
 
-.p-days__a{
+.p-days__a{ /*p-days__link porfasplis*/
     text-decoration: none;
     color: black;
 
@@ -2317,7 +2415,7 @@ body {
     width: 200px; height: 100px;
 }
 
-.p-matchez__logo{
+.p-matchez__logo{ /*p-matches__logo -- falta por ir rápido :P*/
     display: flex;
     align-items: center;
     gap: 15px;
@@ -2339,39 +2437,40 @@ body {
 }
 
 
-
-
-
-
-
 /* #endregion */
 
-/* #region LIGA ESPAÑOLA */
+/* ----------------- LIGA ESPAÑOLA ----------------- */
+
+/* #region MAIN STYLES */
+
+/* ----------------- TEXT ----------------- */
 
 .le-title{
-    color: black;
+    color: var(--main-black);
     font-size: 35px;
     margin-bottom: 0px;
 }
 
 .le-subtitle{
-    color: black;
+    color: var(--main-black);
     font-size: 25px;
     margin-bottom: 0px;
 }
 
 .le-text{
-    color: black;
+    color: var(--main-black);
     font-size: 15px;
 }
 
 .le-title--white{
-    color: white;
+    color: var(--main-white);
 }
 
 .le-text--white{
-    color: white;
+    color: var(--main-white);
 }
+
+/* ----------------- OTHER ----------------- */
 
 .le-button{
     text-decoration: none;
@@ -2379,7 +2478,13 @@ body {
     padding: 15px;
     border-radius: 10px;
     margin-top: 25px;
+    color: var(--main-white);
+
 }
+
+/* #endregion */
+
+/* #region LIGA MOMENTS */
 
 .le-moments{
     width: 100%;
@@ -2495,7 +2600,7 @@ body {
 
 .le-moments__button span {
     position: relative;
-    color: white;
+    color: var(--main-white);
     font-weight: bold;
     z-index: 2;
 }
