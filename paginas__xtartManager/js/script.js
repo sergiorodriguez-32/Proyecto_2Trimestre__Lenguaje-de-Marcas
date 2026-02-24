@@ -81,57 +81,97 @@ window.addEventListener('load', () => {
 // Rotación de los equipos clasificados en la página de la Supercopa y calendario de partidos
 
 document.querySelectorAll(".sc-footballTeams__box, .p-days__box")
-.forEach(box => {
+    .forEach(box => {
 
-    const carrusel = box.querySelector("[class$='__carrusel']");
-    const container = box.querySelector("[class$='__wrapper']");
-    const btnLeft = box.querySelector("[class$='__button--left']");
-    const btnRight = box.querySelector("[class$='__button--right']");
+        const carrusel = box.querySelector("[class$='__carrusel']");
+        const container = box.querySelector("[class$='__wrapper']");
+        const btnLeft = box.querySelector("[class$='__button--left']");
+        const btnRight = box.querySelector("[class$='__button--right']");
 
-    let autoplay;
+        let autoplay;
 
-    function moverDerecha() {
-        const card = carrusel.firstElementChild;
-        const cardWidth = card.offsetWidth + 20;
+        function moverDerecha() {
+            const card = carrusel.firstElementChild;
+            const cardWidth = card.offsetWidth + 20;
 
-        carrusel.style.transform = `translateX(-${cardWidth}px)`;
+            carrusel.style.transform = `translateX(-${cardWidth}px)`;
 
-        setTimeout(() => {
+            setTimeout(() => {
+                carrusel.style.transition = "none";
+                carrusel.appendChild(card);
+                carrusel.style.transform = "translateX(0)";
+                carrusel.offsetHeight;
+                carrusel.style.transition = "transform 0.6s ease";
+            }, 600);
+        }
+
+        function moverIzquierda() {
+            const last = carrusel.lastElementChild;
+            const cardWidth = last.offsetWidth + 20;
+
             carrusel.style.transition = "none";
-            carrusel.appendChild(card);
-            carrusel.style.transform = "translateX(0)";
+            carrusel.prepend(last);
+            carrusel.style.transform = `translateX(-${cardWidth}px)`;
+
             carrusel.offsetHeight;
             carrusel.style.transition = "transform 0.6s ease";
-        }, 600);
-    }
+            carrusel.style.transform = "translateX(0)";
+        }
 
-    function moverIzquierda() {
-        const last = carrusel.lastElementChild;
-        const cardWidth = last.offsetWidth + 20;
+        btnRight.addEventListener("click", moverDerecha);
+        btnLeft.addEventListener("click", moverIzquierda);
 
-        carrusel.style.transition = "none";
-        carrusel.prepend(last);
-        carrusel.style.transform = `translateX(-${cardWidth}px)`;
+        function iniciarAutoplay() {
+            autoplay = setInterval(moverDerecha, 2500);
+        }
 
-        carrusel.offsetHeight;
-        carrusel.style.transition = "transform 0.6s ease";
-        carrusel.style.transform = "translateX(0)";
-    }
+        function pararAutoplay() {
+            clearInterval(autoplay);
+        }
 
-    btnRight.addEventListener("click", moverDerecha);
-    btnLeft.addEventListener("click", moverIzquierda);
+        iniciarAutoplay();
 
-    function iniciarAutoplay() {
-        autoplay = setInterval(moverDerecha, 2500);
-    }
+        container.addEventListener("mouseenter", pararAutoplay);
+        container.addEventListener("mouseleave", iniciarAutoplay);
+    });
 
-    function pararAutoplay() {
-        clearInterval(autoplay);
-    }
 
-    iniciarAutoplay();
+// Sección de Momentos
 
-    container.addEventListener("mouseenter", pararAutoplay);
-    container.addEventListener("mouseleave", iniciarAutoplay);
+document.addEventListener("DOMContentLoaded", function() {
+
+    const video = document.getElementById("le-mainVideo");
+    const buttons = document.querySelectorAll(".le-moments__button");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+
+            const newVideo = this.dataset.video;
+
+            // Evitar cambiar si ya está activo
+            if (video.src.includes(newVideo)) return;
+
+            // Quitar active
+            buttons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // Fade out
+            video.classList.add("fade-out");
+
+            setTimeout(() => {
+
+                video.src = newVideo;
+                video.load();
+
+                video.addEventListener("canplay", function handler() {
+                    video.play();
+                    video.classList.remove("fade-out");
+                    video.removeEventListener("canplay", handler);
+                });
+
+            }, 500); // debe coincidir con el CSS (0.5s)
+
+        });
+    });
+
 });
-
