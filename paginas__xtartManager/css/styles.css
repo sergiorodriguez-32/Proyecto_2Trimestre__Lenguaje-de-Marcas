@@ -9,6 +9,10 @@ body {
     font-family: var(--font);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* COMMON COLORS */
     --primary-color: #1E1E1E;
@@ -1816,6 +1820,14 @@ body {
 
 }
 
+.sc-article:hover {
+    transform: scale(1.01);
+    background-color: var(--tertiary-color);
+    
+}
+
+
+
 .sc-article--1{
     grid-column: span 2;
 
@@ -1840,6 +1852,8 @@ body {
     padding: 0;
     color: var(--sc-main-color);
 }
+
+
 
 .sc-article__date{
     font-weight: 400;
@@ -2176,6 +2190,52 @@ body {
 
 /* ------------------------Web Partidos------------------------ */
 
+.p-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+[id] {
+    scroll-margin-top: 200px;
+}
+
+/* -----------------Button Up----------------- */
+
+.p-btnUp{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-white);
+    color: var(--main-black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.p-btnUp--show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.p-btnUp:hover {
+    transform: scale(1.1);
+    background-color: var(--hm-main-color);
+}
+
+
+.p-arrow{
+    font-size: 24px;
+    font-weight: bold;
+}
+
 /* -----------------Hero----------------- */
 
 .p-hero{
@@ -2202,9 +2262,10 @@ body {
 .p-days{
     display: flex;
     justify-content: center;
-    
+    position: sticky;
+    top: 80px; 
+    z-index: 999;
 }
-
 
 .p-days__box{
     background-color: white;
@@ -2231,6 +2292,7 @@ body {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
+    height: 50px;
 }
 
 .p-days__card{
@@ -2241,6 +2303,13 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.p-days__card:hover {
+    transform: scale(1.01);
+    background-color: var(--hm-main-color);
+    border: 2px solid black;
+    
 }
 
 .p-days__button{
@@ -2338,8 +2407,54 @@ body {
     margin: 2px;
 }
 
+/* ----------------- Formulario-----------------  */
+
+.p-formulary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--main-white);
+    color: var(--main-black);
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.p-formulary__tittle{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.p-formulary__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.p-formulary__input{
+    width: 300px;
+    height: 45px;
+    padding: 0 20px;
+    text-align: left;
+    border-radius: 12px;
+    background-color: rgb(252, 252, 215);
+    border: 2px solid var(--tertiary-color);
+    backdrop-filter: blur(2px);
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
 
 
+.p-formulary__link{
+    text-decoration: none;
+    border: 1px solid var(--tertiary-color);
+    background-color: var(--hm-main-color);
+    color: var(--main-black);
+    padding: 15px;
+    border-radius: 15px;
+}
 
 
 
