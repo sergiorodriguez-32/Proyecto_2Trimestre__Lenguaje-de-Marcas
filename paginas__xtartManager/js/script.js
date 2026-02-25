@@ -81,57 +81,173 @@ window.addEventListener('load', () => {
 // Rotación de los equipos clasificados en la página de la Supercopa y calendario de partidos
 
 document.querySelectorAll(".sc-footballTeams__box, .p-days__box")
-.forEach(box => {
+    .forEach(box => {
 
-    const carrusel = box.querySelector("[class$='__carrusel']");
-    const container = box.querySelector("[class$='__wrapper']");
-    const btnLeft = box.querySelector("[class$='__button--left']");
-    const btnRight = box.querySelector("[class$='__button--right']");
+        const carrusel = box.querySelector("[class$='__carrusel']");
+        const container = box.querySelector("[class$='__wrapper']");
+        const btnLeft = box.querySelector("[class$='__button--left']");
+        const btnRight = box.querySelector("[class$='__button--right']");
 
-    let autoplay;
+        let autoplay;
 
-    function moverDerecha() {
-        const card = carrusel.firstElementChild;
-        const cardWidth = card.offsetWidth + 20;
+        function moverDerecha() {
+            const card = carrusel.firstElementChild;
+            const cardWidth = card.offsetWidth + 20;
 
-        carrusel.style.transform = `translateX(-${cardWidth}px)`;
+            carrusel.style.transform = `translateX(-${cardWidth}px)`;
 
-        setTimeout(() => {
+            setTimeout(() => {
+                carrusel.style.transition = "none";
+                carrusel.appendChild(card);
+                carrusel.style.transform = "translateX(0)";
+                carrusel.offsetHeight;
+                carrusel.style.transition = "transform 0.6s ease";
+            }, 600);
+        }
+
+        function moverIzquierda() {
+            const last = carrusel.lastElementChild;
+            const cardWidth = last.offsetWidth + 20;
+
             carrusel.style.transition = "none";
-            carrusel.appendChild(card);
-            carrusel.style.transform = "translateX(0)";
+            carrusel.prepend(last);
+            carrusel.style.transform = `translateX(-${cardWidth}px)`;
+
             carrusel.offsetHeight;
             carrusel.style.transition = "transform 0.6s ease";
-        }, 600);
+            carrusel.style.transform = "translateX(0)";
+        }
+
+        btnRight.addEventListener("click", moverDerecha);
+        btnLeft.addEventListener("click", moverIzquierda);
+
+        function iniciarAutoplay() {
+            autoplay = setInterval(moverDerecha, 2500);
+        }
+
+        function pararAutoplay() {
+            clearInterval(autoplay);
+        }
+
+        iniciarAutoplay();
+
+        container.addEventListener("mouseenter", pararAutoplay);
+        container.addEventListener("mouseleave", iniciarAutoplay);
+    });
+
+    // LIGA
+
+// Sección de Partidos
+
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".le-matches__items");
+    const btnPrev = document.querySelector(".le-matches__arrow--left");
+    const btnNext = document.querySelector(".le-matches__arrow--right");
+    let slides = Array.from(track.children);
+    
+    const gap = 30;
+    const slideWidth = slides[0].offsetWidth + gap;
+    const totalOriginalSlides = slides.length;
+
+    slides.forEach(slide => {
+        const cloneFirst = slide.cloneNode(true);
+        const cloneLast = slide.cloneNode(true);
+        track.appendChild(cloneFirst); 
+        track.insertBefore(cloneLast, slides[0]); 
+    });
+
+    let index = totalOriginalSlides; 
+    let isAnimating = false;
+
+    function updatePosition(animate = true) {
+        track.style.transition = animate ? "transform 0.5s ease-out" : "none";
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-    function moverIzquierda() {
-        const last = carrusel.lastElementChild;
-        const cardWidth = last.offsetWidth + 20;
+    updatePosition(false);
 
-        carrusel.style.transition = "none";
-        carrusel.prepend(last);
-        carrusel.style.transform = `translateX(-${cardWidth}px)`;
+    btnNext.addEventListener("click", () => {
+        if (isAnimating) return;
+        isAnimating = true;
+        index++;
+        updatePosition(true);
+    });
 
-        carrusel.offsetHeight;
-        carrusel.style.transition = "transform 0.6s ease";
-        carrusel.style.transform = "translateX(0)";
-    }
+    btnPrev.addEventListener("click", () => {
+        if (isAnimating) return;
+        isAnimating = true;
+        index--;
+        updatePosition(true);
+    });
 
-    btnRight.addEventListener("click", moverDerecha);
-    btnLeft.addEventListener("click", moverIzquierda);
+    track.addEventListener("transitionend", () => {
+        isAnimating = false;
+        
+        if (index >= totalOriginalSlides * 2) {
+            index = totalOriginalSlides;
+            updatePosition(false);
+        }
+        
+        if (index <= totalOriginalSlides - 1) {
+            if (index === 0 || index < totalOriginalSlides) {
+                if (index === 0) index = totalOriginalSlides;
+                if (index < totalOriginalSlides) {
+                }
+            }
+        }
+        
+        if (index >= totalOriginalSlides * 2) {
+            index = totalOriginalSlides;
+            updatePosition(false);
+        } else if (index <= 0) {
+            index = totalOriginalSlides;
+            updatePosition(false);
+        }
+    });
 
-    function iniciarAutoplay() {
-        autoplay = setInterval(moverDerecha, 2500);
-    }
-
-    function pararAutoplay() {
-        clearInterval(autoplay);
-    }
-
-    iniciarAutoplay();
-
-    container.addEventListener("mouseenter", pararAutoplay);
-    container.addEventListener("mouseleave", iniciarAutoplay);
+    window.addEventListener('resize', () => {
+        const newSlideWidth = slides[0].offsetWidth + gap;
+        track.style.transition = "none";
+        track.style.transform = `translateX(-${index * newSlideWidth}px)`;
+    });
 });
 
+// Sección de Momentos
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const video = document.getElementById("le-mainVideo");
+    const buttons = document.querySelectorAll(".le-moments__button");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+
+            const newVideo = this.dataset.video;
+
+            // Evitar cambiar si ya está activo
+            if (video.src.includes(newVideo)) return;
+
+            // Quitar active
+            buttons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // Fade out
+            video.classList.add("fade-out");
+
+            setTimeout(() => {
+
+                video.src = newVideo;
+                video.load();
+
+                video.addEventListener("canplay", function handler() {
+                    video.play();
+                    video.classList.remove("fade-out");
+                    video.removeEventListener("canplay", handler);
+                });
+
+            }, 500); // debe coincidir con el CSS (0.5s)
+
+        });
+    });
+
+});
