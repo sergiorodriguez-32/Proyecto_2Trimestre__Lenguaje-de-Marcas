@@ -17,10 +17,10 @@
             <nav class="header__nav">
                 <div class="nav__item">
                     <a href="" class="header__link header__link--le">Competiciones</a>
-                    <div class="dropdown">
-                        <a href="" class="dropdown__link dropdown__link--le">Copa del Rey</a>
-                        <a href="Supercopa.html" class="dropdown__link dropdown__link--le">SuperCopa</a>
-                        <a href="" class="dropdown__link dropdown__link--le">Liga Española</a>
+                    <div class="header__dropdown">
+                        <a href="" class="header__dropdown__link header__dropdown__link--le">Copa del Rey</a>
+                        <a href="Supercopa.html" class="header__dropdown__link header__dropdown__link--le">SuperCopa</a>
+                        <a href="" class="header__dropdown__link header__dropdown__link--le">Liga Española</a>
                     </div>
                 </div>
                 <div class="nav__item--size">
@@ -33,43 +33,106 @@
         </div>
     </header>
     <section class="le-hero">
-        <div>
-            <div>
-                <h1 class="le-title">Titulo</h1>
-                <h2 class="le-subtitle">Subtitulo</h2>
-            </div>
+        <div class="le-hero__content">
+            <h1 class="le-hero__title">La Liga Española</h1>
+            <h2 class="le-subtitle le-subtitle--white">La competición más blah blah blah</h2>
         </div>
     </section>
-    <section class="le-partidos">
-        <h2 class="le-title">Próximos Partidos</h2>
-        <div class="le-partidos">
-            <a href="">
-                <div>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                        </div>
-                        <p class="le-text">10 Feb</p>
+    <section class="le-matches">
+        <div class="le-matches__container">
+            <h2 class="le-title">Próximos Partidos</h2>
+            <div class="le-matches__box">
+                <div class="le-matches__carrousel">
+                    <button class="le-matches__arrow le-matches__arrow--left">&#10094;</button>
+                    <div class="le-matches__viewport">
+                    <div class="le-matches__items">
+                        <a href="" class="le-matches__card">
+                            <div class="le-matches__imgs">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                            </div>
+                            <h3 class="le-subtitle">Equipo1 vs Equipo1</h3>
+                            <p class="le-text">Lugar en el que se va a jugar</p>
+                            <p class="le-text">10 Feb</p>
+                        </a>
+                        <a href="" class="le-matches__card">
+                            <div class="le-matches__imgs">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                            </div>
+                            <h3 class="le-subtitle">Equipo2 vs Equipo2</h3>
+                            <p class="le-text">Lugar en el que se va a jugar</p>
+                            <p class="le-text">10 Feb</p>
+                        </a>
+                        <a href="" class="le-matches__card">
+                            <div class="le-matches__imgs">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                            </div>
+                            <h3 class="le-subtitle">Equipo3 vs Equipo3</h3>
+                            <p class="le-text">Lugar en el que se va a jugar</p>
+                            <p class="le-text">10 Feb</p>
+                        </a>
+                        <a href="" class="le-matches__card">
+                            <div class="le-matches__imgs">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                            </div>
+                            <h3 class="le-subtitle">Equipo4 vs Equipo4</h3>
+                            <p class="le-text">Lugar en el que se va a jugar</p>
+                            <p class="le-text">10 Feb</p>
+                        </a>
+                        <a href="" class="le-matches__card">
+                            <div class="le-matches__imgs">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                            </div>
+                            <h3 class="le-subtitle">Equipo5 vs Equipo5</h3>
+                            <p class="le-text">Lugar en el que se va a jugar</p>
+                            <p class="le-text">10 Feb</p>
+                        </a>
+                        <a href="" class="le-matches__card">
+                            <div class="le-matches__imgs">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                                <img class="le-matches__img" src="/imagenes/logo_Xtart.png" alt="">
+                            </div>
+                            <h3 class="le-subtitle">Equipo6 vs Equipo6</h3>
+                            <p class="le-text">Lugar en el que se va a jugar</p>
+                            <p class="le-text">10 Feb</p>
+                        </a>
                     </div>
-                    <h3 class="le-subtitle">Equipo vs Equipo</h3>
-                    <p class="le-text">Lugar en el que se va a jugar</p>
+                    </div>
+                    <button class="le-matches__arrow le-matches__arrow--right">&#10095;</button>
                 </div>
-            </a>
+                <a href="Partidos.html" class="le-button le-text">Ver Todos los Partidos</a>
+            </div>
         </div>
-        <a href="Partidos.html" class="le-button le-text">Ver Todos los Partidos</a>
     </section>
     <section class="le-news">
         <div class="le-news__box">
             <h1 class="le-title">Noticias Recientes</h1>
             <div class="le-news__container">
-                <div class="le-news__item">
-                    <h2 class="le-subtitle">Titulo de la noticia</h2>
-                    <p class="le-text">Texto sobre la noticia</p>
+                <div class="le-news__grid">
+                    <div class="le-news__item le-news__item--a">
+                        <h2 class="le-subtitle">Titulo de la noticia</h2>
+                        <p class="le-text">Texto sobre la noticia</p>
+                    </div>
+                    <div class="le-news__item le-news__item--b">
+                        <h2 class="le-subtitle">Titulo de la noticia</h2>
+                        <p class="le-text">Texto sobre la noticia</p>
+                    </div>
+                    <div class="le-news__item le-news__item--c">
+                        <h2 class="le-subtitle">Titulo de la noticia</h2>
+                        <p class="le-text">Texto sobre la noticia</p>
+                    </div>
+                    <div class="le-news__item le-news__item--d">
+                        <h2 class="le-subtitle">Titulo de la noticia</h2>
+                        <p class="le-text">Texto sobre la noticia</p>
+                    </div>
                 </div>
+                <a href="" class="le-button le-text">Ver todas las Noticias</a>
             </div>
         </div>
-        <a href="" class="le-button le-text">Ver todas las Noticias</a>
     </section>
 
     <section class="le-moments">
@@ -87,25 +150,26 @@
                         <button class="le-moments__button le-moments__button--1 active" data-video="/videos/video1.mp4">
                             <span>REAL MADRID <br> 1-1 <br> ATLÉTICO CLUB</span>
                         </button>
-                        <button class="le-moments__button le-moments__button--2" data-video="/videos/video2.mp4" style="background-image: url(/imagenes/liga/thumb2.png);">
+                        <button class="le-moments__button le-moments__button--2" data-video="/videos/video2.mp4"
+                            style="background-image: url(/imagenes/liga/thumb2.png);">
                             <span>FC BARCELONA <br> 1-2 <br> ATLÉTICO CLUB</span>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="le-moments__bottom">
-                        <button class="le-moments__button le-moments__button--3" data-video="/videos/video3.mp4">
-                            <span>REAL MADRID <br> 1-0 <br> ATLÉTICO CLUB</span>
-                        </button>
-                        <button class="le-moments__button le-moments__button--4" data-video="/videos/video2.mp4">
-                            <span>REAL MADRID <br> 5-1 <br> REAL BETIS</span>
-                        </button>
-                        <button class="le-moments__button le-moments__button--5" data-video="/videos/video5.mp4">
-                            <span>REAL MADRID <br> 4-1 <br> LAS PALMAS</span>
-                        </button>
-                        <button class="le-moments__button le-moments__button--6" data-video="/videos/video6.mp4">
-                            <span>REAL MADRID <br> 2 -1 <br> RCD MALLORCA</span>
-                        </button>
+                <button class="le-moments__button le-moments__button--3" data-video="/videos/video3.mp4">
+                    <span>REAL MADRID <br> 1-0 <br> ATLÉTICO CLUB</span>
+                </button>
+                <button class="le-moments__button le-moments__button--4" data-video="/videos/video2.mp4">
+                    <span>REAL MADRID <br> 5-1 <br> REAL BETIS</span>
+                </button>
+                <button class="le-moments__button le-moments__button--5" data-video="/videos/video5.mp4">
+                    <span>REAL MADRID <br> 4-1 <br> LAS PALMAS</span>
+                </button>
+                <button class="le-moments__button le-moments__button--6" data-video="/videos/video6.mp4">
+                    <span>REAL MADRID <br> 2 -1 <br> RCD MALLORCA</span>
+                </button>
             </div>
         </div>
     </section>
