@@ -3,7 +3,7 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #d8d8d8;
+    background-color: #d8d8d8; /*#d8d8d8*/ /*#f1f1f1*/ 
     overflow-x: hidden;
     height: 100%;
     font-family: var(--font);
@@ -22,11 +22,13 @@ body {
     --cdr-color-fondo-contact: #c5c4c4; /*HAY QUE VERLO*/
 
     /* SC COLORS */
-    --sc-main-color:rgb(26, 28, 141); 
+    --sc-main-color:rgb(26, 28, 141); /*no vale para el hover, va a haber q elegir uno parecido para el hover*/
+    --sc-hover-color:rgb(35, 93, 209);
     --sc-contrast-color: rgb(108, 106, 106); 
 
     /* LE COLORS */
     --le-main-color: #c61717;
+    --le-secondary-color: #6a2c2c;
 
     /*FONTS*/
     --font: 'Arial', "Roboto", sans-serif;
@@ -71,11 +73,11 @@ body {
     gap: 50px;
 }
 
-.nav__item {
+.header__nav__item {
     position: relative;
 }
 
-.nav__item--size {
+.header__nav__item--size {
     position: relative;
 }
 
@@ -89,16 +91,24 @@ body {
     color: var(--cdr-main-color);
 }
 
+.header__link--hm:hover {
+    color: var(--hm-main-color);
+}
+
+.header__link--sc:hover {
+    color: var(--sc-hover-color);
+}
+
 .header__link--le:hover{
     color: var(--le-main-color);
 }
 
-.nav__item>.header__link::after {
+.header__nav__item>.header__link::after {
     content: " ▾";
     font-size: 12px;
 }
 
-.dropdown {
+.header__dropdown {
     position: absolute;
     top: 130%;
     left: 0;
@@ -116,24 +126,34 @@ body {
     z-index: 999;
 }
 
-.dropdown__link {
+.header__dropdown__link {
     padding: 10px 15px;
     text-decoration: none;
     color: var(--tertiary-color);
     transition: 0.2s ease, color 0.2s ease;
 }
 
-.dropdown__link--cdr:hover {
+.header__dropdown__link--cdr:hover {
     background-color: var(--cdr-main-color);
     color: var(--main-black);
 }
 
-.dropdown__link--le:hover{
+.header__dropdown__link--hm:hover {
+    background-color: var(--hm-main-color);
+    color: var(--main-black);
+}
+
+.header__dropdown__link--sc:hover {
+    background-color: var(--sc-hover-color);
+    color: var(--main-black);
+}
+
+.header__dropdown__link--le:hover{
     background-color: var(--le-main-color);
     color: var(--main-black);
 }
 
-.nav__item:hover .dropdown {
+.header__nav__item:hover .header__dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -698,7 +718,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     padding: 12px 24px;
     background-color: var(--main-black);
     color: var(--tertiary-color);
-    border: 1px solid white;
+    border: 1px solid var(--main-white);
     cursor: pointer;
 }
 
@@ -759,7 +779,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.container__box { /*footer__box*/
+.footer__box {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -767,28 +787,34 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     grid-area: a; /*sin esto*/
 }
 
-/*
-.footer__box--a/1 { 
+.footer__box--1 { 
     grid-area: a;
 }
-*/
 
-.container__img { /*footer__logo*/
+.footer__box--2 { 
+    grid-area: b;
+}
+
+.footer__box--3 { 
+    grid-area: c;
+}
+
+.footer__box--4 {
+    grid-area: d;
+}
+
+.footer__box--5 {
+    grid-area: e;
+}
+
+.footer__logo {
     height: 150px;
     width: 180px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.container__box--2 { /*footer__box--b/2*/
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    grid-area: b; /*solo esto*/
-}
-
-.container__list { /*footer__list*/
+.footer__list { 
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -797,13 +823,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     text-align: center;
 }
 
-.list__link.list__link--cdr { 
-    color: var(--tertiary-color);
-    text-decoration: none;
-    text-align: center;
-}
-
-/*
 .footer__link { 
     color: var(--tertiary-color);
     text-decoration: none;
@@ -814,51 +833,19 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     color: var(--cdr-main-color);
 }
 
+.footer__link--sc:hover {
+    color: var(--sc-hover-color);
+}
+
 .footer__link--le:hover {
     color: var(--le-main-color);
 }
 
-*/
-
-.list__link.list__link--cdr:hover {
-    color: var(--cdr-main-color);
+.footer__link--hm:hover { 
+    color: var(--hm-main-color);
 }
 
-.list__link.list__link--le {
-    color: var(--tertiary-color);
-    text-decoration: none;
-    text-align: center;
-}
-
-.list__link.list__link--le:hover {
-    color: var(--le-main-color);
-}
-
-.container__box--3 { /*poner todos los --box seguidos y con el formato de arriba*/
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    grid-area: c;
-}
-
-.container__box--4 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    grid-area: d;
-}
-
-.container__box--5 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    grid-area: e;
-}
-
-.container__title { /*footer__title*/
+.footer__title { 
     color: var(--tertiary-color);
     text-align: center;
     font-size: 14px;
@@ -885,11 +872,10 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     color: var(--tertiary-color);
 }
 
-.left__link { /*footer__left__link*/
+.footer__left__link {
     text-decoration: none;
 }
 
-/*
 .footer__left__img {
     height: 30px;
     width: 30px;
@@ -903,44 +889,25 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     background-color: var(--cdr-main-color);
     border-radius: 50%;
     padding: 5px;
+}
 
+.footer__left__img--hm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--hm-main-color);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.footer__left__img--sc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: var(--sc-hover-color);
+    border-radius: 50%;
+    padding: 5px;
 }
 
 .footer__left__img--le:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background-color: var(--le-main-color);
-    border-radius: 50%;
-    padding: 5px;
-
-}
-
-*/
-
-.left__img.left__img--cdr {
-    height: 30px;
-    width: 30px;
-    object-fit: cover;
-    transition: all 0.8s ease;
-}
-
-.left__img.left__img--cdr:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background-color: var(--cdr-main-color);
-    border-radius: 50%;
-    padding: 5px;
-
-}
-
-.left__img.left__img--le {
-    height: 30px;
-    width: 30px;
-    object-fit: cover;
-    transition: all 0.8s ease;
-}
-
-.left__img.left__img--le:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     background-color: var(--le-main-color);
@@ -953,24 +920,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     gap: 12px;
 }
 
-.right__boton--cdr {
-    background-color: var(--main-black);
-    border-radius: 12px;
-    padding: 8px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.right__boton--cdr:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background-color: var(--cdr-main-color);
-    transition: all 1.2s ease;
-}
-
-/*
 .footer__right__boton {
     background-color: var(--main-black);
     border-radius: 12px;
@@ -988,49 +937,43 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     transition: all 1.2s ease;
 }
 
+.footer__right__boton--hm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    background-color: var(--hm-main-color);
+}
+
+.footer__right__boton--sc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    background-color: var(--sc-hover-color);
+}
+
 .footer__right__boton--le:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     background-color: var(--le-main-color);
     transition: all 1.2s ease;
 }
-*/
 
-.right__boton--le {
-    background-color: var(--main-black);
-    border-radius: 12px;
-    padding: 8px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.right__boton--le:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background-color: var(--le-main-color);
-    transition: all 1.2s ease;
-}
-
-.right__img { /*footer__right__img*/
+.footer__right__img {
     height: 28px;
     width: 28px;
 }
 
-.right__text { /*footer__right__text -- si es el mismo que footer__link habría que unificar */
+.footer__right__text {
     display: flex;
     flex-direction: column;
     line-height: 1.1;
     color: var(--tertiary-color);
 }
 
-.right__span { /*footer__right__span*/
+.footer__right__span { 
     font-size: 10px;
     opacity: 0.85;
 }
 
-.right__title { /*footer__right__title*/
+.footer__right__title {
     font-size: 14px;
     font-weight: 600;
 }
@@ -1044,7 +987,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.conditions__list { /*footer__conditions__list*/
+.footer__conditions__list {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1074,15 +1017,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.header__link--eq:hover { /*esto va en header*/
-    color: var(--hm-main-color);
-}
-
-.dropdown__link--eq:hover { /*esto va en header*/
-    background-color: var(--hm-main-color);
-    color: var(--main-black);
 }
 
 .eq-carrousel-container { /*eq-carrousel__container*/
@@ -1572,57 +1506,13 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .eq-destacado__item:hover {
-    background-color: rgb(247, 239, 154);
+    background-color: var(--hm-main-color);
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
     cursor: pointer;
 }
 
-
-.list__link.list__link--eq { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
-    color: var(--tertiary-color);
-    text-decoration: none;
-    text-align: center;
-}
-
-.list__link.list__link--eq:hover { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
-    color: var(--hm-main-color);
-}
-
-.left__img.left__img--eq { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
-    height: 30px;
-    width: 30px;
-    object-fit: cover;
-}
-
-.left__img.left__img--eq:hover { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
-    background-color: rgba(247, 239, 154, 0.674);
-    border-radius: 50%;
-    padding: 5px;
-    transition: all 0.6s ease;
-}
-
-.right__boton.right__boton--eq { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
-    background-color: var(--main-black);
-    border-radius: 12px;
-    padding: 8px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
-}
-
-.right__boton.right__boton--eq:hover { /*esto debería ir en footer con las especificaciones ya cambiadas ahí*/
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
-    background-color: rgba(247, 239, 154, 0.674);
-}
-
 /* #endregion */
-
 
 /* #region hm */
 
@@ -1700,7 +1590,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 
-@keyframes hmTicker { /*esta bien pero ns si seria más legible he-ticker, como idea*/
+@keyframes hmTicker { /*esta bien pero ns si seria más legible hm-ticker, como idea*/
     0% {
         transform: translateX(100%);
     }
@@ -1780,7 +1670,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* #endregion */
 
-
 /* #region Web Supercopa */
 /* ---------------------------Web Supercopa--------------------------- */
 
@@ -1809,7 +1698,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .sc-a{ /*si se pudiera a lo mejor sc-link queda mejor q solo a*/
     text-decoration: none;
-    color: white;
+    color: var(--main-white);
 }
 
 /* -----------------Hero----------------- */
@@ -1861,7 +1750,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     flex-direction: column;
     justify-content: center;
     width: 80%;
-    background-color: white;
+    background-color: var(--main-white);
     border-radius: 10px;
     padding: 30px;
     padding-top: 0;
@@ -1903,7 +1792,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .sc-article{
-    background-color: white;
+    background-color: var(--main-white);
     border: 1px solid var(--sc-main-color);
     box-shadow: 0px 4px 5px 1px var(--sc-main-color);
     border-radius: 20px;
@@ -1974,7 +1863,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     flex-direction: column;
     justify-content: center;
     width: 80%;
-    background-color: white;
+    background-color: var(--main-white);
     border-radius: 10px;
     padding: 30px;
     padding-top: 0;
@@ -2029,7 +1918,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     "a a"
     "b c";
     width: 80%;
-    background-color: white;
+    background-color: var(--main-white);
     border-radius: 10px;
     padding: 30px;
     padding-top: 0;
@@ -2204,7 +2093,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .sc-footballTeams__box{
     width: 80%;
-    background-color: white;
+    background-color: var(--main-white);
     border-radius: 10px;
     padding: 30px;
     position: relative;
@@ -2253,7 +2142,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-radius: 50%;
     border: none;
     background: rgba(0,0,0,0.6);
-    color: white;
+    color: var(--main-white);
     font-size: 20px;
     cursor: pointer;
     z-index: 10;
@@ -2290,7 +2179,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .p-hero__title{
-    color: white;
+    color: var(--main-white);
     text-shadow: 2px 2px 4px gray;
     font-size: 60px;
 }
@@ -2305,11 +2194,11 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 
 .p-days__box{
-    background-color: white;
+    background-color: var(--main-white);
     padding: 20px;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--main-black);
 
 }
 
@@ -2333,7 +2222,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .p-days__card{
     width: 100px; height: 40px;
-    border: 1px solid black;
+    border: 1px solid var(--main-black);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -2350,7 +2239,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-radius: 50%;
     border: none;
     background: rgba(185, 185, 185, 0.6);
-    color: white;
+    color: var(--main-white);
     font-size: 20px;
     cursor: pointer;
     z-index: 10;
@@ -2368,7 +2257,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .p-days__a{ /*p-days__link porfasplis*/
     text-decoration: none;
-    color: black;
+    color: var(--main-black);
 
 }
 
@@ -2402,7 +2291,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .p-matches__card{
-    background-color: white;
+    background-color: var(--main-white);
     display: flex;
     border-radius: 10px;
     padding: 10px;
@@ -2466,6 +2355,10 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     color: var(--main-white);
 }
 
+.le-subtitle--white{
+    color: var(--main-white);
+}
+
 .le-text--white{
     color: var(--main-white);
 }
@@ -2474,12 +2367,280 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .le-button{
     text-decoration: none;
-    background-color: #2c3e50;
+    background-color: var(--le-secondary-color);
     padding: 15px;
     border-radius: 10px;
     margin-top: 25px;
     color: var(--main-white);
+    display: inline-block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+.le-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* #endregion */
+
+/* #region LIGA HERO */
+
+.le-hero{
+    background-image: url(/imagenes/liga/le-hero.jpeg);
+    background-color: rgba(0,0,0,0.6); 
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.le-hero__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.le-hero__title{
+    color: var(--main-white);
+    font-size: 45px;
+    margin-bottom: 0px;
+}
+
+
+/* #endregion */
+
+/* #region LIGA MATCHES */
+
+.le-matches{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.le-matches__container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.le-matches__box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.le-matches__carrousel{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.le-matches__arrow {
+    background: var(--le-secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 2;
+    flex: 0 0 auto;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.le-matches__arrow--left{
+    margin-right: 10px;
+}
+
+.le-matches__arrow--right{
+    margin-left: 10px;
+}
+
+.le-matches__arrow:hover {
+    transform: scale(1.1);
+}
+
+.le-matches__viewport {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.le-matches__items {
+    width: max-content;
+    display: flex;
+    gap: 30px;
+    padding: 30px 0;
+    margin: 0;
+    transition: transform 0.5s ease; 
+}
+
+.le-matches__items::-webkit-scrollbar {
+    display: none;
+}
+.le-matches__items {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.le-matches__card{
+    width: 200px;
+    min-width: 200px;
+    flex: 0 0 200px;
+    background-color: var(--tertiary-color);
+    box-shadow: 0px 4px 5px 0px var(--main-black);
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.le-matches__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 25px var(--main-black);
+}
+
+.le-matches__imgs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px var(--main-black);
+}
+
+.le-matches__img{
+    width: 50%;
+}
+
+
+/* #endregion */
+
+/* #region LIGA NEWS */
+
+.le-news{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.le-news__box{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.le-news__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.le-news__grid{
+    width: 100%;
+    max-height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    padding: 30px;
+    grid-template-areas:
+        'a a b'
+        'c d d';
+}
+
+.le-news__item{
+    background-image: url(/imagenes/liga/thumb1.png);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.le-news__item--a{
+    grid-area: a;
+}
+
+.le-news__item--b{
+    grid-area: b;
+}
+
+.le-news__item--c{
+    grid-area: c;
+}
+
+.le-news__item--d{
+    grid-area: d;
+}
+
+.le-news__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.1) 70%,
+        transparent 100%
+    );
+    z-index: 1;
+}
+
+.le-news__item h2,
+.le-news__item p {
+    color: var(--main-white);
+    position: relative;
+    z-index: 2;
+}
+
+.le-news__item:hover {
+    animation: le-hoverIn 0.35s forwards;
+}
+
+.le-news__item:not(:hover) {
+    animation: le-hoverOut 0.35s forwards;
+}
+
+@keyframes le-hoverIn {
+    0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 var(--le-secondary-color);
+    }
+    100% {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px var(--le-secondary-color);
+    }
+}
+
+@keyframes le-hoverOut {
+    0% {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px var(--le-secondary-color);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 var(--le-secondary-color);
+    }
 }
 
 /* #endregion */
@@ -2488,7 +2649,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .le-moments{
     width: 100%;
-    background-color: #2c3e50;
+    background-color: var(--le-secondary-color);
     margin-top: 100px;
     padding: 40px 0px;
     display: flex;
