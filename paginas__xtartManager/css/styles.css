@@ -2447,7 +2447,7 @@ html {
 }
 
 
-.p-formulary__link{
+.p-formulary__button{
     text-decoration: none;
     border: 1px solid var(--tertiary-color);
     background-color: var(--hm-main-color);
@@ -2455,9 +2455,6 @@ html {
     padding: 15px;
     border-radius: 15px;
 }
-
-
-
 
 /* #endregion */
 
