@@ -933,8 +933,20 @@
         padding-left: 20px;
     }
 
-    .hm-superCopa__box{
+    .hm-superCopa__box {
         flex-direction: column;
+    }
+
+}
+
+/* #endregion */
+
+/* #region PARTIDOS */
+
+@media (max-width: 600px) {
+
+    .p-hero {
+        text-align: center;
     }
 
 }

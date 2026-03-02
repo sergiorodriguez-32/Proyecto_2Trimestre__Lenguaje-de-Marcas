@@ -2686,7 +2686,9 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .p-matches__day{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    
 }
 
 
