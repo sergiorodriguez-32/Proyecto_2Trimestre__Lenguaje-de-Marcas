@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html,
 body {
     margin: 0px;
@@ -30,7 +32,7 @@ body {
     --le-secondary-color: #6a2c2c;
 
     /*FONTS*/
-    --font: 'Arial', "Roboto", sans-serif;
+    --font: "Roboto", 'Arial' , sans-serif;
 }
 
 /* #region HEADER */
@@ -1682,6 +1684,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .hm-liga__container{
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1709,7 +1712,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 .hm-liga__button{
     text-decoration: none;
     background-color: var(--primary-color);
-    color: var(--main-white);
     padding: 15px 30px;
     border-radius: 10px;
     margin-top: 15px;
@@ -1729,19 +1731,28 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     object-fit: contain;
     overflow: hidden;
     border-radius: 15px;
-        box-shadow: 0 10px 20px var(--main-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 10px 20px var(--main-black);
+}
+
+.hm-liga__img{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* ------- FORMULARIO HOME ------- */
 
 .hm-form{
+    height: auto;
     background-color: var(--primary-color);
     color: var(--main-white);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
     padding: 40px 0;
+    border-bottom: solid 2px var(--tertiary-color);
 }
 
 .hm-form__title{
@@ -1767,13 +1778,15 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .hm-form__container{
-    width: 80%;
+    width: 75%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    gap: 150px;
+        align-items: start;
+
 }
 
-.hm-form__right{
+.hm-form__left{
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -1810,27 +1823,86 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     grid-area: c;
 }
 
-.hm-form__left{
+.hm-form__right{
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
 }
 
-/*
-.le-news__grid{
-    width: 100%;
-    max-height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 15px;
-    padding: 30px;
-    grid-template-areas:
-        'a a b'
-        'c d d';
+.hm-form__box{
+    min-height: 420px;
 }
-*/
+
+.hm-form__content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hm-form__input{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 85%;
+    text-align: left;
+    border-radius: 10px;
+    background-color: rgba(77, 77, 77, 0.5);
+    color: var(--quaternary-color);
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.hm-form__select{
+    width:max-content;
+    padding-right: 20px;
+}
+
+.hm-form__option{
+    background-color: var(--primary-color);
+}
+
+.hm-form__message{
+    width:max-content;
+    min-height: 70px;
+    padding: 10px;
+    padding-right: 40px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 85%;
+    text-align: left;
+    border-radius: 10px;
+    background-color: rgba(77, 77, 77, 0.5);
+    color: var(--quaternary-color);
+    font-size: 16px;
+    transition: 0.2s;
+    font-family: var(--font);
+}
+
+.hm-form__checkbox{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hm-form__button{
+    text-decoration: none;
+    background-color: var(--tertiary-color);
+    color: var(--main-black);
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-top: 40px; 
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hm-form__button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px var(--hm-main-color);
+    color: var(--primary-color);
+}
+
 
 /* #endregion */
 
@@ -2678,13 +2750,16 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .le-matches__imgs{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
     align-items: center;
     border-bottom: solid 1px var(--main-black);
 }
 
 .le-matches__img{
     width: 50%;
+    max-width: 70px;
+    margin-bottom: 15px;
 }
 
 

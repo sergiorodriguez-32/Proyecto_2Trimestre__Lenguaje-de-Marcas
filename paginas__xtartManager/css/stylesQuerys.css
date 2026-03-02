@@ -503,12 +503,17 @@
 
     .eq-carrousel-container,
     .eq-alineaciones,
-    .eq-destacado,
-    .footer {
+    .eq-destacado {
         width: 100%;
         padding: 18px 14px;
         box-sizing: border-box;
         margin: 25px auto;
+    }
+
+    .footer {
+        width: 100%;
+        padding: 18px 14px;
+        box-sizing: border-box;
     }
 
     .eq-carrousel__heading,
@@ -838,5 +843,92 @@
 
 /* #endregion */
 
+/* #region HOME*/
 
+@media (max-width: 1024px) {
 
+    .hm-liga__container{
+        width: 90%;
+    }
+
+    .hm-liga__right{
+        width: 60%;
+    }
+
+    .hm-form__container {
+        gap: 50px;
+    }
+
+    .hm-form__select {
+        max-width: 185px;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hm-hero__container {
+        max-height: 300px ;
+    }
+
+    .hm-liga__container{
+        flex-direction: column;
+    }
+
+    .hm-liga__left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .hm-liga__right {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .hm-form__container{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hm-form__left{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hm-form__grid {
+    display: flex;
+    grid-gap: 10px;
+    margin-top: 15px;
+    }
+
+    .hm-form__item {
+        width: 100%;
+    }
+
+    .hm-form__item--b{
+        width: fit-content;
+        min-width: 120px;
+    }
+
+    .hm-form__right{
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hm-form__select {
+        max-width: 210px;
+        padding-right: 10px;
+        padding-left: 20px;
+    }
+
+}
+
+/* #endregion */
