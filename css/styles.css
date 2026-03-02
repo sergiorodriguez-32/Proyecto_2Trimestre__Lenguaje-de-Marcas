@@ -580,6 +580,7 @@ html {
     font-weight: 800;
     cursor: pointer;
     text-align: center;
+    padding: 3px;
 }
 
 .cdr-news__item--2 {

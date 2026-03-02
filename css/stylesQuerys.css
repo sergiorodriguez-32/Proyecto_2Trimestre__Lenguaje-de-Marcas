@@ -63,6 +63,7 @@
     .cdr-news__item--4,
     .cdr-news__item--5 {
         width: 100%;
+        max-width: 500px;
         height: auto;
         border-radius: 12px;
         overflow: hidden;
@@ -72,6 +73,8 @@
 
     .cdr-news__item {
         min-height: 400px;
+        width: 100%;
+        max-width: 500px;
         background-size: cover;
         background-position: center top;
     }
@@ -109,6 +112,7 @@
 
     .cdr-news__text {
         font-size: 16px;
+        padding: 15px;
 
     }
 
@@ -1032,18 +1036,18 @@
         grid-template-columns: 1fr;
     }
 
-    .sc-match__box{
-    gap: 30px;
+    .sc-match__box {
+        gap: 30px;
 
-}
+    }
 
     .sc-match__next {
         gap: 30px;
     }
 
-    .sc-match__refereeBox{
-    gap: 20px;
-}
+    .sc-match__refereeBox {
+        gap: 20px;
+    }
 
 }
 
