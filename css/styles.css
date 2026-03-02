@@ -5,34 +5,40 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #d8d8d8; /*#d8d8d8*/ /*#f1f1f1*/ 
+    background-color: #f1f1f1;
+    /*#d8d8d8*/
+    /*#f1f1f1*/
     overflow-x: hidden;
     height: 100%;
     font-family: var(--font);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* COMMON COLORS */
     --primary-color: #1E1E1E;
-    --tertiary-color:#d1d1d1;
-    --main-white: white ;
-    --main-black:#0f0f0f;
-    --hm-main-color: rgb(247, 239, 154); 
+    --tertiary-color: #d1d1d1;
+    --main-white: white;
+    --main-black: #0f0f0f;
+    --hm-main-color: rgb(247, 239, 154);
 
     /* CDR COLORS */
-    --cdr-main-color: #00c896; 
-    --cdr-color-fondo-contact: #c5c4c4; /*HAY QUE VERLO*/
+    --cdr-main-color: #00c896;
+    --cdr-color-fondo-contact: #c5c4c4;
 
     /* SC COLORS */
-    --sc-main-color:rgb(35, 93, 209);
-    --sc-contrast-color: rgb(108, 106, 106); 
+    --sc-main-color: rgb(35, 93, 209);
+    --sc-contrast-color: rgb(108, 106, 106);
 
     /* LE COLORS */
     --le-main-color: #c61717;
     --le-secondary-color: #6a2c2c;
 
     /*FONTS*/
-    --font: "Roboto", 'Arial' , sans-serif;
+    --font: "Roboto", 'Arial', sans-serif;
 }
 
 /* #region HEADER */
@@ -103,7 +109,7 @@ body {
     color: var(--sc-main-color);
 }
 
-.header__link--le:hover{
+.header__link--le:hover {
     color: var(--le-main-color);
 }
 
@@ -152,7 +158,7 @@ body {
     color: var(--main-black);
 }
 
-.header__dropdown__link--le:hover{
+.header__dropdown__link--le:hover {
     background-color: var(--le-main-color);
     color: var(--main-black);
 }
@@ -196,18 +202,18 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    grid-area: a; /*sin esto*/
-}
-
-.footer__box--1 { 
     grid-area: a;
 }
 
-.footer__box--2 { 
+.footer__box--1 {
+    grid-area: a;
+}
+
+.footer__box--2 {
     grid-area: b;
 }
 
-.footer__box--3 { 
+.footer__box--3 {
     grid-area: c;
 }
 
@@ -226,7 +232,7 @@ body {
     border-radius: 10px;
 }
 
-.footer__list { 
+.footer__list {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -235,7 +241,7 @@ body {
     text-align: center;
 }
 
-.footer__link { 
+.footer__link {
     color: var(--tertiary-color);
     text-decoration: none;
     text-align: center;
@@ -253,11 +259,11 @@ body {
     color: var(--le-main-color);
 }
 
-.footer__link--hm:hover { 
+.footer__link--hm:hover {
     color: var(--hm-main-color);
 }
 
-.footer__title { 
+.footer__title {
     color: var(--tertiary-color);
     text-align: center;
     font-size: 14px;
@@ -380,7 +386,7 @@ body {
     color: var(--tertiary-color);
 }
 
-.footer__right__span { 
+.footer__right__span {
     font-size: 10px;
     opacity: 0.85;
 }
@@ -547,17 +553,6 @@ body {
     gap: 20px;
 }
 
-/*
-debería ser un solo cdr-news__item SIN grid-area: a; comun para todos, y luego 
-
-.cdr-news__item--1/a con el grid-area: a; 
-
-Haciendolo así se repite un código q no haría falta repetir y hay más cosas q cambiar si hay un fallo 
-
-ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visualizarlo
-
-*/
-
 .cdr-news__item {
     grid-area: a;
     background:
@@ -585,6 +580,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     font-weight: 800;
     cursor: pointer;
     text-align: center;
+    padding: 3px;
 }
 
 .cdr-news__item--2 {
@@ -937,17 +933,19 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     width: 100%;
 }
 
-.cdr-campo input { 
+.cdr-campo input {
     padding: 10px;
     font-size: 14px;
     flex: 1;
 }
 
-.cdr-campo-mensaje { /* cdr-campo__mensaje */
+.cdr-campo-mensaje {
+    /* cdr-campo__mensaje */
     width: 100%;
 }
 
-.cdr-campo-placeholder { /* cdr-campo__placeholder */
+.cdr-campo-placeholder {
+    /* cdr-campo__placeholder */
     width: 100%;
     padding: 10px;
     font-size: 14px;
@@ -956,13 +954,15 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     box-sizing: border-box;
 }
 
-.cdr-campo-boton { /* cdr-campo__boton */
+.cdr-campo-boton {
+    /* cdr-campo__boton */
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
-.cdr-campo--button { /* cdr-campo__buttom */
+.cdr-campo--button {
+    /* cdr-campo__buttom */
     padding: 12px 24px;
     background-color: var(--main-black);
     color: var(--tertiary-color);
@@ -970,7 +970,8 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     cursor: pointer;
 }
 
-.cdr-campo--button:hover { /* cdr-campo__buttom */
+.cdr-campo--button:hover {
+    /* cdr-campo__buttom */
     background-color: var(--cdr-main-color);
     cursor: pointer;
 }
@@ -1024,7 +1025,8 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     flex-direction: column;
 }
 
-.eq-carrousel-container { /*eq-carrousel__container*/
+.eq-carrousel-container {
+    /*eq-carrousel__container*/
     position: relative;
     width: 95%;
     max-width: 1400px;
@@ -1126,7 +1128,8 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     font-weight: 900;
 }
 
-.eq-carrousel-btn { /*eq-carrousel__btn*/
+.eq-carrousel-btn {
+    /*eq-carrousel__btn*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1145,15 +1148,18 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     transition: background-color 0.3s ease;
 }
 
-.eq-carrousel-btn--left { /*eq-carrousel__btn--left*/
+.eq-carrousel-btn--left {
+    /*eq-carrousel__btn--left*/
     left: 10px;
 }
 
-.eq-carrousel-btn--right { /*eq-carrousel__btn--right*/
+.eq-carrousel-btn--right {
+    /*eq-carrousel__btn--right*/
     right: 10px;
 }
 
-.eq-carrousel-btn:hover { /*eq-carrousel__btn*/
+.eq-carrousel-btn:hover {
+    /*eq-carrousel__btn*/
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1238,26 +1244,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     padding: 10px;
 }
 
-/*
-.eq-alineaciones__box {
-    grid-area: a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--main-white);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform .2s ease, box-shadow .2s ease;
-    gap: 5px;
-    padding: 10px;
-}
-
-.eq-alineaciones__box--1/a {
-    grid-area: a;
-} y así con todos
-
-*/
 
 .eq-alineaciones__box--2 {
     grid-area: b;
@@ -1442,7 +1428,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     background: rgba(0, 0, 0, .08);
 }
 
-.eq-alineaciones__box:hover, /*este se pondría solo al común, no debería hacer falta ponerselo a todos los demás*/
+.eq-alineaciones__box:hover,
 .eq-alineaciones__box--2:hover,
 .eq-alineaciones__box--3:hover,
 .eq-alineaciones__box--4:hover,
@@ -1530,7 +1516,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .hm-hero__container {
-    height: 600px;
+    height: 400px;
     width: 100%;
     background:
         url(/imagenes/index/background.png);
@@ -1579,13 +1565,15 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     overflow: hidden;
 }
 
-.hm-copaDelRey__ticker-track { /*hm-copaDelRey__ticker__track*/
+.hm-copaDelRey__ticker-track {
+    /*hm-copaDelRey__ticker__track*/
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.hm-copaDelRey__ticker-text { /*hm-copaDelRey__ticker__text*/
+.hm-copaDelRey__ticker-text {
+    /*hm-copaDelRey__ticker__text*/
     display: inline-block;
     white-space: nowrap;
     font-weight: 900;
@@ -1595,7 +1583,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 
-@keyframes hmTicker { /*esta bien pero ns si seria más legible hm-ticker, como idea*/
+@keyframes hmTicker {
     0% {
         transform: translateX(100%);
     }
@@ -1675,7 +1663,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* ------- SECCIÓN LA LIGA ------- */
 
-.hm-liga{
+.hm-liga {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1683,7 +1671,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     background-color: var(--le-secondary-color);
 }
 
-.hm-liga__container{
+.hm-liga__container {
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -1691,31 +1679,31 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     gap: 0px;
 }
 
-.hm-liga__left{
+.hm-liga__left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.hm-liga__title{
+.hm-liga__title {
     color: var(--main-white);
     font-size: 40px;
     font-weight: 1000;
     margin-bottom: 0;
 }
 
-.hm-liga__text{
+.hm-liga__text {
     color: var(--main-white);
     font-size: 20px;
 }
 
-.hm-liga__button{
+.hm-liga__button {
     text-decoration: none;
     background-color: var(--primary-color);
     padding: 15px 30px;
     border-radius: 10px;
     margin-top: 15px;
-    color: var(--main-white);    
+    color: var(--main-white);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1725,7 +1713,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     color: var(--hm-main-color);
 }
 
-.hm-liga__right{
+.hm-liga__right {
     width: 50%;
     max-height: 300px;
     object-fit: contain;
@@ -1733,18 +1721,118 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     box-shadow: 0 10px 20px var(--main-black);
 }
 
-.hm-liga__img{
+.hm-liga__img {
     max-width: 100%;
     max-height: 100%;
 }
 
+/* ------- SECCIÓN LA SUPERCOPA ------- */
+
+.hm-superCopa {
+    background-color: var(--sc-main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.hm-superCopa__box {
+    gap: 50px;
+    display: flex;
+}
+
+.hm-superCopa__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hm-superCopa__boxNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hm-article {
+    background-color: var(--main-white);
+    border-radius: 15px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hm-article__img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hm-article__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.hm-article__title {
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: var(--sc-main-color);
+}
+
+.hm-article__date {
+    font-weight: 400;
+    color: var(--sc-contrast-color);
+}
+
+.hm-boxButton {
+    display: flex;
+}
+
+.hm-button {
+    background-color: var(--main-white);
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hm-button:hover {
+    transform: translateY(-2px);
+    background: var(--hm-main-color);
+}
+
+
+.hm-link {
+    text-decoration: none;
+    color: var(--sc-main-color);
+    font-weight: bold;
+}
+
+.hm-superCopa__title {
+    color: var(--main-white);
+    font-size: 40px;
+    font-weight: 1000;
+    margin-bottom: 0;
+}
+
+.hm-superCopa__text {
+    color: var(--main-white);
+    font-size: 20px;
+}
+
 /* ------- FORMULARIO HOME ------- */
 
-.hm-form{
+.hm-form {
     height: auto;
     background-color: var(--primary-color);
     color: var(--main-white);
@@ -1755,45 +1843,45 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: solid 2px var(--tertiary-color);
 }
 
-.hm-form__title{
+.hm-form__title {
     font-size: 40px;
     font-weight: 1000;
     margin: 0;
 }
 
-.hm-form__subtitle{
+.hm-form__subtitle {
     font-size: 25px;
     font-weight: 1000;
     margin: 0;
 }
 
-.hm-form__info{
+.hm-form__info {
     font-size: 15px;
     margin-bottom: 0;
 }
 
-.hm-form__text{
+.hm-form__text {
     font-size: 15px;
     margin-bottom: 0;
 }
 
-.hm-form__container{
+.hm-form__container {
     width: 75%;
     display: flex;
     justify-content: center;
     gap: 150px;
-        align-items: start;
+    align-items: start;
 
 }
 
-.hm-form__left{
+.hm-form__left {
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
 }
 
-.hm-form__grid{
+.hm-form__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -1801,29 +1889,29 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     grid-template-areas:
         'a b'
         'c .';
-        margin-top: 15px;
+    margin-top: 15px;
 }
 
-.hm-form__item{
+.hm-form__item {
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
 }
 
-.hm-form__item--a{
+.hm-form__item--a {
     grid-area: a;
 }
 
-.hm-form__item--b{
+.hm-form__item--b {
     grid-area: b;
 }
 
-.hm-form__item--c{
+.hm-form__item--c {
     grid-area: c;
 }
 
-.hm-form__right{
+.hm-form__right {
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -1831,17 +1919,17 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: flex-start;
 }
 
-.hm-form__box{
+.hm-form__box {
     min-height: 420px;
 }
 
-.hm-form__content{
+.hm-form__content {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.hm-form__input{
+.hm-form__input {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -1854,17 +1942,17 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     transition: 0.2s;
 }
 
-.hm-form__select{
-    width:max-content;
+.hm-form__select {
+    width: max-content;
     padding-right: 20px;
 }
 
-.hm-form__option{
+.hm-form__option {
     background-color: var(--primary-color);
 }
 
-.hm-form__message{
-    width:max-content;
+.hm-form__message {
+    width: max-content;
     min-height: 70px;
     padding: 10px;
     padding-right: 40px;
@@ -1880,20 +1968,20 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     font-family: var(--font);
 }
 
-.hm-form__checkbox{
+.hm-form__checkbox {
     display: flex;
     justify-content: left;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.hm-form__button{
+.hm-form__button {
     text-decoration: none;
     background-color: var(--tertiary-color);
     color: var(--main-black);
     padding: 15px 30px;
     border-radius: 10px;
-    margin-top: 40px; 
+    margin-top: 40px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1911,35 +1999,40 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* -------Elementos comunes de la página SC------- */
 
-.sc-boxButton{
+.sc-boxButton {
     display: flex;
     gap: 30px;
 }
 
-.sc-button{
+.sc-boxButton__know {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.sc-button {
     background-color: var(--sc-main-color);
     border-radius: 40px;
     padding-left: 80px;
     padding-right: 80px;
 }
 
-.sc-boxButton--center{
+.sc-boxButton--center {
     justify-content: center;
     align-items: center;
 }
 
-.sc-boxButton--padding{
+.sc-boxButton--padding {
     padding: 30px;
 }
 
-.sc-a{ /*si se pudiera a lo mejor sc-link queda mejor q solo a*/
+.sc-link {
     text-decoration: none;
     color: var(--main-white);
 }
 
 /* -----------------Hero----------------- */
 
-.sc-hero{
+.sc-hero {
     background-image: url(/imagenes/Supercopa/fbl-eur-supercup-2024-trophy.avif);
     background-color: rgba(180, 180, 180, 0.979);
     background-blend-mode: multiply;
@@ -1953,7 +2046,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-hero__box{
+.sc-hero__box {
     background-color: rgba(255, 255, 255, 0.836);
     border: 1px solid var(--sc-main-color);
     box-shadow: 0px 4px 5px 1px var(--sc-main-color);
@@ -1961,7 +2054,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-hero__title{
+.sc-hero__title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1973,7 +2066,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* -----------------News----------------- */
 
-.sc-news{
+.sc-news {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1981,7 +2074,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     margin-top: 30px;
 }
 
-.sc-news__box{
+.sc-news__box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1993,22 +2086,13 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-news__title{
+.sc-news__title {
     font-size: 35px;
     width: 80%;
 
 }
 
-.sc-news__imgBig{ /*diferencia actual entre  imgBig y img -- a nivel estilo, me refiero -- habría q unificar*/
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-
-}
-
-.sc-news__img{
+.sc-news__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -2016,55 +2100,68 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-top-right-radius: 20px;
 }
 
-.sc-news__article{
+.sc-news__article {
     display: grid;
     justify-content: center;
     align-items: stretch;
     grid-template-columns: repeat(4, 1fr);
     padding: 20px;
     gap: 20px;
-    grid-auto-rows: 350px;
+    grid-auto-rows: 320px;
     padding-top: 0;
 }
 
-.sc-article{
+.sc-article {
     background-color: var(--main-white);
     border: 1px solid var(--sc-main-color);
     box-shadow: 0px 4px 5px 1px var(--sc-main-color);
     border-radius: 20px;
     display: grid;
-    grid-template-rows:  40% 60%;
-    height: 100%;
+    grid-template-rows: 40% 60%;
     overflow: hidden;
 
 }
 
-.sc-article--1{
+.sc-article:hover {
+    transform: scale(1.01);
+    background-color: var(--tertiary-color);
+}
+
+.sc_linkBox {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.sc_linkBox:visited {
+    color: inherit;
+}
+
+.sc-article--1 {
     grid-column: span 2;
 
 }
 
-.sc-article--6{
+.sc-article--6 {
     grid-column: span 2;
 
 }
 
-.sc-article__content{
+.sc-article__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
     padding: 15px;
 }
 
-.sc-article__title{
+.sc-article__title {
     font-weight: 500;
-    text-align: start;
     margin: 0;
     padding: 0;
     color: var(--sc-main-color);
 }
 
-.sc-article__date{
+.sc-article__date {
     font-weight: 400;
     color: var(--sc-contrast-color);
     text-align: end;
@@ -2072,29 +2169,30 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     padding: 0;
 }
 
-.sc-article__text{
+.sc-article__text {
     font-weight: 400;
     padding: 0;
-    text-align: start;
+
 }
 
 /* -----------------Know----------------- */
 
-.sc-know{
+.sc-know {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 30px;
+    width: 100%;
 }
 
-.sc-know__title{
+.sc-know__title {
     font-size: 35px;
     width: 80%;
 
 }
 
-.sc-know__box{
+.sc-know__box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2106,31 +2204,49 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-know__box2{ /* sc-know__card o sc-know__container podría ser ??? porq tengan más sentido las etiquetas, box2 en este caso me parece un poco ambiguo, pero tmpo esta  mas asiq se puede quedar así*/
+.sc-know__container {
     border: 1px solid var(--sc-main-color);
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+    align-items: start;
+}
+
+.sc-know__content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.sc-know__imageContainer {
+    grid-column: 2;
+    grid-row: 1;
     display: flex;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
-.sc-know__boxImg{ /*sc-know__img -- se puede, know NO tiene más imagenes*/
+.sc-know__img {
     border-radius: 50%;
-    height: 250px; width: 250px;
-    padding: 20px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
 }
 
-.sc-know__highlighted{
+.sc-know__highlighted {
     color: orange;
     font-size: 18px;
     font-weight: 300;
 
 }
 
-.sc-know__newsTitle{ /*sc-know__title -- se puede, know NO tiene más titulos */
+.sc-know__title--H2 {
     font-weight: 400;
 }
 
-.sc-know__text{
+.sc-know__text {
     font-weight: 300;
     font-size: 22px;
     color: var(--sc-contrast-color);
@@ -2139,7 +2255,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* -----------------Match----------------- */
 
-.sc-match{
+.sc-match {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2148,11 +2264,11 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-match__box{
+.sc-match__box {
     display: grid;
     grid-template-areas:
-    "a a"
-    "b c";
+        "a a"
+        "b c";
     width: 80%;
     background-color: var(--main-white);
     border-radius: 10px;
@@ -2162,27 +2278,27 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-match__boxLeft{
+.sc-match__boxLeft {
     grid-area: b;
     display: flex;
     flex-direction: column;
 
 }
 
-.sc-match__boxRight{
+.sc-match__boxRight {
     grid-area: c;
     display: flex;
     flex-direction: column;
 }
 
-.sc-match__title{
+.sc-match__title {
     grid-area: a;
     font-size: 35px;
     width: 80%;
 
 }
 
-.sc-match__next{
+.sc-match__next {
     display: flex;
     gap: 80px;
     justify-content: center;
@@ -2190,18 +2306,19 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__logo{
-    height: 80px; width: 80px;
+.sc-match__logo {
+    height: 80px;
+    width: 80px;
 
 }
 
-.sc-match__team{
+.sc-match__team {
     display: flex;
     gap: 20px;
 
 }
 
-.sc-match__points{
+.sc-match__points {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -2209,7 +2326,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     margin: 0;
 }
 
-.sc-match__pointBox{
+.sc-match__pointBox {
     display: flex;
     gap: 80px;
     font-size: 40px;
@@ -2217,7 +2334,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-match__resultsBox{
+.sc-match__resultsBox {
     display: flex;
     gap: 30px;
     font-size: 20px;
@@ -2226,7 +2343,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__goals{
+.sc-match__goals {
     display: flex;
     gap: 80px;
     margin: 0;
@@ -2234,18 +2351,18 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__goalText{ /*debería ser goals -- puede quedarse sc-match__goalsText o sc-match__goal__text pero el estilo superior es goals NO goal*/
+.sc-match__goalText {
     font-size: 20px;
     color: var(--sc-contrast-color);
 }
 
-.sc-match__goalNumber{ /*debería ser goals -- puede quedarse sc-match__goalsNumber o sc-match__goal__number pero el estilo superior es goals NO goal*/
+.sc-match__goalNumber {
     font-size: 40px;
     font-weight: bold;
     margin: 0;
 }
 
-.sc-match__information{
+.sc-match__information {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2253,36 +2370,37 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__stadiumImg{ 
+.sc-match__stadiumImg {
     border-radius: 20%;
-    height: 150px; width: 250px;
+    height: 150px;
+    width: 250px;
     padding: 20px;
     object-fit: cover;
 }
 
-.sc-match__informationTitle{ 
+.sc-match__informationTitle {
     font-size: 35px;
     margin: 0;
 }
 
-.sc-match__informationText{
+.sc-match__informationText {
     font-size: 20px;
     color: var(--sc-contrast-color);
 }
 
-.sc-match__referee{
+.sc-match__referee {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__refereeBox{
+.sc-match__refereeBox {
     display: flex;
     justify-content: center;
     gap: 150px;
 }
 
-.sc-match__refereeTitle{ /*visualmente no hay diferencia entre refereeTitle y AlignmentTitle -- no se podría hacer sc-match__title -- y poner las diferencias entre los dos a los div de fuera o abajo??? */
+.sc-match__refereeTitle {
     display: flex;
     font-size: 25px;
     font-weight: bold;
@@ -2290,17 +2408,17 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     margin-bottom: 0;
 }
 
-.sc-match__highlight{
+.sc-match__highlight {
     font-size: 18px;
     font-weight: bold;
 }
 
-.sc-match__refereeName{
+.sc-match__refereeName {
     font-size: 18px;
     color: var(--sc-contrast-color);
 }
 
-.sc-match__Alignment{ /*es una tontería pero si están todos en minúscula no debería haber 1 en mayúsculas sc-match__alignment */
+.sc-match__alignment {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2308,18 +2426,18 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-left: 1px solid var(--tertiary-color);
 }
 
-.sc-match__AlignmentTitle{ /*lo comentado en referee*/
+.sc-match__alignmentTitle {
     font-size: 25px;
 }
 
-.sc-match__AlignmentImg{
+.sc-match__alignmentImg {
     height: 550px;
 }
 
 
 /* -----------------Football Teams----------------- */
 
-.sc-footballTeams{ /*está bien así pero podría ser tmb solo sc-teams */
+.sc-footballTeams {
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -2327,39 +2445,40 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 
-.sc-footballTeams__box{
+.sc-footballTeams__box {
     width: 80%;
     background-color: var(--main-white);
     border-radius: 10px;
     padding: 30px;
     position: relative;
     overflow: hidden;
-
 }
 
-.sc-footballTeams__tittle{
+.sc-footballTeams__tittle {
     font-size: 35px;
 
 }
 
-.sc-footballTeams__img{
-    height: 100px; width: 100px;
+.sc-footballTeams__img {
+    height: 100px;
+    width: 100px;
     object-fit: contain;
 }
 
-.sc-footballTeams__wrapper{
+.sc-footballTeams__wrapper {
     overflow: hidden;
     width: 100%;
 }
 
-.sc-footballTeams__carrusel{
+.sc-footballTeams__carrusel {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
 }
 
-.sc-footballTeams__card{
-    width: 280px; height: 200px;
+.sc-footballTeams__card {
+    width: 280px;
+    height: 200px;
     background: var(--tertiary-color);
     border-radius: 10px;
     display: flex;
@@ -2369,7 +2488,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     flex-shrink: 0;
 }
 
-.sc-footballTeams__button{
+.sc-footballTeams__button {
     position: absolute;
     top: 62%;
     transform: translateY(-50%);
@@ -2377,19 +2496,19 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     height: 45px;
     border-radius: 50%;
     border: none;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: var(--main-white);
     font-size: 20px;
     cursor: pointer;
     z-index: 10;
 }
 
-.sc-footballTeams__button--left{
+.sc-footballTeams__button--left {
     left: 20px;
 
 }
 
-.sc-footballTeams__button--right{
+.sc-footballTeams__button--right {
     right: 22px;
 }
 
@@ -2399,9 +2518,54 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* ------------------------Web Partidos------------------------ */
 
+.p-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+[id] {
+    scroll-margin-top: 200px;
+}
+
+/* -----------------Button Up----------------- */
+
+.p-btnUp {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-white);
+    color: var(--main-black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.p-btnUp--show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.p-btnUp:hover {
+    transform: scale(1.1);
+    background-color: var(--hm-main-color);
+}
+
+.p-arrow {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 /* -----------------Hero----------------- */
 
-.p-hero{
+.p-hero {
     background-image:
         linear-gradient(rgba(105, 105, 105, 0.5), rgba(105, 105, 105, 0.5)),
         url(/imagenes/Partidos/soccer-ball-background-vpu36rjeyfm4a74l.jpg);
@@ -2414,7 +2578,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.p-hero__title{
+.p-hero__title {
     color: var(--main-white);
     text-shadow: 2px 2px 4px gray;
     font-size: 60px;
@@ -2422,14 +2586,15 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* -----------------Days----------------- */
 
-.p-days{
+.p-days {
     display: flex;
     justify-content: center;
-    
+    position: sticky;
+    top: 80px;
+    z-index: 999;
 }
 
-
-.p-days__box{
+.p-days__box {
     background-color: var(--main-white);
     padding: 20px;
     position: relative;
@@ -2438,26 +2603,28 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.p-days__tittle{
+.p-days__tittle {
     font-size: 20px;
     margin-top: 0;
 }
 
-.p-days__wrapper{
+.p-days__wrapper {
     overflow: hidden;
     width: calc(100% - 105px);
     margin: 0 auto;
-    
+
 }
 
-.p-days__carrusel{
+.p-days__carrusel {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
+    height: 50px;
 }
 
-.p-days__card{
-    width: 100px; height: 40px;
+.p-days__card {
+    width: 100px;
+    height: 40px;
     border: 1px solid var(--main-black);
     border-radius: 20px;
     display: flex;
@@ -2466,7 +2633,14 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     flex-shrink: 0;
 }
 
-.p-days__button{
+.p-days__card:hover {
+    transform: scale(1.01);
+    background-color: var(--hm-main-color);
+    border: 2px solid black;
+
+}
+
+.p-days__button {
     position: absolute;
     top: 62%;
     transform: translateY(-50%);
@@ -2482,16 +2656,16 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.p-days__button--left{
+.p-days__button--left {
     left: 20px;
 
 }
 
-.p-days__button--right{
+.p-days__button--right {
     right: 22px;
 }
 
-.p-days__a{ /*p-days__link porfasplis*/
+.p-days__link {
     text-decoration: none;
     color: var(--main-black);
 
@@ -2499,34 +2673,35 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* -----------------Partidos----------------- */
 
-.p-matches{
+.p-matches {
     display: flex;
     padding-bottom: 30px;
 }
 
-.p-matches__box{
+.p-matches__box {
     margin-left: 50px;
 }
 
-.p-matches__dayBox{
+.p-matches__dayBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
 }
 
-.p-matches__day{
+.p-matches__day {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+
 }
 
-
-.p-matches__h3{
+.p-matches__h3 {
     font-size: 30px;
     margin-bottom: 0;
 }
 
-.p-matches__card{
+.p-matches__card {
     background-color: var(--main-white);
     display: flex;
     border-radius: 10px;
@@ -2535,32 +2710,83 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: center;
 }
 
-.p-matches__names{
+.p-matches__names {
     padding-right: 120px;
-    width: 200px; height: 100px;
+    width: 200px;
+    height: 100px;
 }
 
-.p-matchez__logo{ /*p-matches__logo -- falta por ir rápido :P*/
+.p-matches__logo {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.p-matches__img{
-    width: 40px; height: 40px;
+.p-matches__img {
+    width: 40px;
+    height: 40px;
 }
 
-.p-matches__time{
+.p-matches__time {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.p-matches__timeText{
+.p-matches__timeText {
     font-weight: bold;
     margin: 2px;
 }
 
+
+/* ----------------- Formulario-----------------  */
+
+.p-formulary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--main-white);
+    color: var(--main-black);
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.p-formulary__tittle {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.p-formulary__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.p-formulary__input {
+    width: 300px;
+    height: 45px;
+    padding: 0 20px;
+    text-align: left;
+    border-radius: 12px;
+    background-color: rgb(252, 252, 215);
+    border: 2px solid var(--tertiary-color);
+    backdrop-filter: blur(2px);
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
+
+
+.p-formulary__button {
+    text-decoration: none;
+    border: 1px solid var(--tertiary-color);
+    background-color: var(--hm-main-color);
+    color: var(--main-black);
+    padding: 15px;
+    border-radius: 15px;
+}
 
 /* #endregion */
 
@@ -2570,38 +2796,38 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* ----------------- TEXT ----------------- */
 
-.le-title{
+.le-title {
     color: var(--main-black);
     font-size: 35px;
     margin-bottom: 0px;
 }
 
-.le-subtitle{
+.le-subtitle {
     color: var(--main-black);
     font-size: 25px;
     margin-bottom: 0px;
 }
 
-.le-text{
+.le-text {
     color: var(--main-black);
     font-size: 15px;
 }
 
-.le-title--white{
+.le-title--white {
     color: var(--main-white);
 }
 
-.le-subtitle--white{
+.le-subtitle--white {
     color: var(--main-white);
 }
 
-.le-text--white{
+.le-text--white {
     color: var(--main-white);
 }
 
 /* ----------------- OTHER ----------------- */
 
-.le-button{
+.le-button {
     text-decoration: none;
     background-color: var(--le-secondary-color);
     padding: 15px;
@@ -2614,16 +2840,16 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .le-button:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* #endregion */
 
 /* #region LIGA HERO */
 
-.le-hero{
+.le-hero {
     background-image: url(/imagenes/liga/le-hero.jpeg);
-    background-color: rgba(0,0,0,0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
     background-size: cover;
     height: 350px;
@@ -2632,14 +2858,14 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: center;
 }
 
-.le-hero__content{
+.le-hero__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.le-hero__title{
+.le-hero__title {
     color: var(--main-white);
     font-size: 45px;
     margin-bottom: 0px;
@@ -2650,7 +2876,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* #region LIGA MATCHES */
 
-.le-matches{
+.le-matches {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -2658,7 +2884,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     box-sizing: border-box;
 }
 
-.le-matches__container{
+.le-matches__container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -2668,13 +2894,13 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: left;
 }
 
-.le-matches__box{
+.le-matches__box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.le-matches__carrousel{
+.le-matches__carrousel {
     width: 100%;
     position: relative;
     display: flex;
@@ -2696,11 +2922,11 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     transition: transform 0.2s ease;
 }
 
-.le-matches__arrow--left{
+.le-matches__arrow--left {
     margin-right: 10px;
 }
 
-.le-matches__arrow--right{
+.le-matches__arrow--right {
     margin-left: 10px;
 }
 
@@ -2720,18 +2946,19 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     gap: 30px;
     padding: 30px 0;
     margin: 0;
-    transition: transform 0.5s ease; 
+    transition: transform 0.5s ease;
 }
 
 .le-matches__items::-webkit-scrollbar {
     display: none;
 }
+
 .le-matches__items {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-.le-matches__card{
+.le-matches__card {
     width: 200px;
     min-width: 200px;
     flex: 0 0 200px;
@@ -2748,7 +2975,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     box-shadow: 0px 15px 25px var(--main-black);
 }
 
-.le-matches__imgs{
+.le-matches__imgs {
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -2756,7 +2983,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: solid 1px var(--main-black);
 }
 
-.le-matches__img{
+.le-matches__img {
     width: 50%;
     max-width: 70px;
     margin-bottom: 15px;
@@ -2767,14 +2994,14 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* #region LIGA NEWS */
 
-.le-news{
+.le-news {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.le-news__box{
+.le-news__box {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -2784,13 +3011,13 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: left;
 }
 
-.le-news__container{
+.le-news__container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.le-news__grid{
+.le-news__grid {
     width: 100%;
     max-height: 600px;
     display: grid;
@@ -2803,7 +3030,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
         'c d d';
 }
 
-.le-news__item{
+.le-news__item {
     min-height: 200px;
     display: flex;
     flex-direction: column;
@@ -2816,22 +3043,22 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     cursor: pointer;
 }
 
-.le-news__item--a{
+.le-news__item--a {
     grid-area: a;
     background-image: url(/imagenes/liga/news1.jpeg);
 }
 
-.le-news__item--b{
+.le-news__item--b {
     grid-area: b;
     background-image: url(/imagenes/liga/news2.jpeg);
 }
 
-.le-news__item--c{
+.le-news__item--c {
     grid-area: c;
     background-image: url(/imagenes/liga/news3.jpeg);
 }
 
-.le-news__item--d{
+.le-news__item--d {
     grid-area: d;
     background-image: url(/imagenes/liga/news4.jpeg);
 }
@@ -2840,13 +3067,11 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.6) 40%,
-        rgba(0, 0, 0, 0.25) 70%,
-        transparent 100%
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.6) 40%,
+            rgba(0, 0, 0, 0.25) 70%,
+            transparent 100%);
     z-index: 1;
 }
 
@@ -2870,6 +3095,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
         transform: translateY(0) scale(1);
         box-shadow: 0 0 0 var(--le-secondary-color);
     }
+
     100% {
         transform: translateY(-10px) scale(1.03);
         box-shadow: 0 20px 40px var(--le-secondary-color);
@@ -2881,6 +3107,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
         transform: translateY(-10px) scale(1.03);
         box-shadow: 0 20px 40px var(--le-secondary-color);
     }
+
     100% {
         transform: translateY(0) scale(1);
         box-shadow: 0 0 0 var(--le-secondary-color);
@@ -2891,7 +3118,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 /* #region LIGA MOMENTS */
 
-.le-moments{
+.le-moments {
     width: 100%;
     background-color: var(--le-secondary-color);
     margin-top: 100px;
@@ -2912,10 +3139,10 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     text-align: center;
 }
 
-.le-moments__top{
+.le-moments__top {
     width: 83%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin-bottom: 30px;
     gap: 40px;
@@ -2931,7 +3158,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     opacity: 0;
 }
 
-.le-moments__top__right{
+.le-moments__top__right {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -2939,7 +3166,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: center;
 }
 
-.le-moments__top__buttons{
+.le-moments__top__buttons {
     display: flex;
     width: 100%;
     gap: 15px;
@@ -2971,36 +3198,36 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border: none;
 }
 
-.le-moments__button--1{
+.le-moments__button--1 {
     background-image: url(/imagenes/liga/thumb1.png);
 }
 
-.le-moments__button--2{
+.le-moments__button--2 {
     background-image: url(/imagenes/liga/thumb2.png);
 }
 
-.le-moments__button--3{
+.le-moments__button--3 {
     background-image: url(/imagenes/liga/thumb3.png);
 }
 
-.le-moments__button--4{
+.le-moments__button--4 {
     background-image: url(/imagenes/liga/thumb4.png);
 }
 
-.le-moments__button--5{
+.le-moments__button--5 {
     background-image: url(/imagenes/liga/thumb5.png);
 }
 
-.le-moments__button--6{
+.le-moments__button--6 {
     background-image: url(/imagenes/liga/thumb6.png);
-    object-fit:fill;
+    object-fit: fill;
 }
 
 .le-moments__button::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .le-moments__button span {
@@ -3011,25 +3238,27 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .le-moments__button.active::before {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .le-moments__button.active {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .le-moments__button:not(.active):hover::before {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 @keyframes le-floating {
     0% {
         transform: translateY(0px) scale(1.05);
     }
+
     50% {
         transform: translateY(-8px) scale(1.05);
     }
+
     100% {
         transform: translateY(0px) scale(1.05);
     }
@@ -3040,4 +3269,3 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 /* #endregion */
-
