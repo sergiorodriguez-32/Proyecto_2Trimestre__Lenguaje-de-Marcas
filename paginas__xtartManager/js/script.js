@@ -135,6 +135,82 @@ document.querySelectorAll(".sc-footballTeams__box, .p-days__box")
         container.addEventListener("mouseleave", iniciarAutoplay);
     });
 
+    // LIGA
+
+// Sección de Partidos
+
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".le-matches__items");
+    const btnPrev = document.querySelector(".le-matches__arrow--left");
+    const btnNext = document.querySelector(".le-matches__arrow--right");
+    let slides = Array.from(track.children);
+    
+    const gap = 30;
+    const slideWidth = slides[0].offsetWidth + gap;
+    const totalOriginalSlides = slides.length;
+
+    slides.forEach(slide => {
+        const cloneFirst = slide.cloneNode(true);
+        const cloneLast = slide.cloneNode(true);
+        track.appendChild(cloneFirst); 
+        track.insertBefore(cloneLast, slides[0]); 
+    });
+
+    let index = totalOriginalSlides; 
+    let isAnimating = false;
+
+    function updatePosition(animate = true) {
+        track.style.transition = animate ? "transform 0.5s ease-out" : "none";
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    updatePosition(false);
+
+    btnNext.addEventListener("click", () => {
+        if (isAnimating) return;
+        isAnimating = true;
+        index++;
+        updatePosition(true);
+    });
+
+    btnPrev.addEventListener("click", () => {
+        if (isAnimating) return;
+        isAnimating = true;
+        index--;
+        updatePosition(true);
+    });
+
+    track.addEventListener("transitionend", () => {
+        isAnimating = false;
+        
+        if (index >= totalOriginalSlides * 2) {
+            index = totalOriginalSlides;
+            updatePosition(false);
+        }
+        
+        if (index <= totalOriginalSlides - 1) {
+            if (index === 0 || index < totalOriginalSlides) {
+                if (index === 0) index = totalOriginalSlides;
+                if (index < totalOriginalSlides) {
+                }
+            }
+        }
+        
+        if (index >= totalOriginalSlides * 2) {
+            index = totalOriginalSlides;
+            updatePosition(false);
+        } else if (index <= 0) {
+            index = totalOriginalSlides;
+            updatePosition(false);
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        const newSlideWidth = slides[0].offsetWidth + gap;
+        track.style.transition = "none";
+        track.style.transform = `translateX(-${index * newSlideWidth}px)`;
+    });
+});
 
 // Sección de Momentos
 
