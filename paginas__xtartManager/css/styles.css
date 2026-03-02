@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html,
 body {
     margin: 0px;
@@ -26,8 +28,7 @@ html {
     --cdr-color-fondo-contact: #c5c4c4; /*HAY QUE VERLO*/
 
     /* SC COLORS */
-    --sc-main-color:rgb(26, 28, 141); /*no vale para el hover, va a haber q elegir uno parecido para el hover*/
-    --sc-hover-color:rgb(35, 93, 209);
+    --sc-main-color:rgb(35, 93, 209);
     --sc-contrast-color: rgb(108, 106, 106); 
 
     /* LE COLORS */
@@ -35,7 +36,7 @@ html {
     --le-secondary-color: #6a2c2c;
 
     /*FONTS*/
-    --font: 'Arial', "Roboto", sans-serif;
+    --font: "Roboto", 'Arial' , sans-serif;
 }
 
 /* #region HEADER */
@@ -46,6 +47,9 @@ html {
     align-items: center;
     background-color: var(--primary-color);
     padding-left: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header__left {
@@ -100,7 +104,7 @@ html {
 }
 
 .header__link--sc:hover {
-    color: var(--sc-hover-color);
+    color: var(--sc-main-color);
 }
 
 .header__link--le:hover{
@@ -148,7 +152,7 @@ html {
 }
 
 .header__dropdown__link--sc:hover {
-    background-color: var(--sc-hover-color);
+    background-color: var(--sc-main-color);
     color: var(--main-black);
 }
 
@@ -246,7 +250,7 @@ html {
 }
 
 .footer__link--sc:hover {
-    color: var(--sc-hover-color);
+    color: var(--sc-main-color);
 }
 
 .footer__link--le:hover {
@@ -314,7 +318,7 @@ html {
 .footer__left__img--sc:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    background-color: var(--sc-hover-color);
+    background-color: var(--sc-main-color);
     border-radius: 50%;
     padding: 5px;
 }
@@ -358,7 +362,7 @@ html {
 .footer__right__boton--sc:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
-    background-color: var(--sc-hover-color);
+    background-color: var(--sc-main-color);
 }
 
 .footer__right__boton--le:hover {
@@ -1673,6 +1677,237 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     justify-self: end;
 }
 
+/* ------- SECCIÓN LA LIGA ------- */
+
+.hm-liga{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--le-secondary-color);
+}
+
+.hm-liga__container{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+}
+
+.hm-liga__left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hm-liga__title{
+    color: var(--main-white);
+    font-size: 40px;
+    font-weight: 1000;
+    margin-bottom: 0;
+}
+
+.hm-liga__text{
+    color: var(--main-white);
+    font-size: 20px;
+}
+
+.hm-liga__button{
+    text-decoration: none;
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: var(--main-white);    
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hm-liga__button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px var(--hm-main-color);
+    color: var(--hm-main-color);
+}
+
+.hm-liga__right{
+    width: 50%;
+    max-height: 300px;
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 10px 20px var(--main-black);
+}
+
+.hm-liga__img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* ------- FORMULARIO HOME ------- */
+
+.hm-form{
+    height: auto;
+    background-color: var(--primary-color);
+    color: var(--main-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: solid 2px var(--tertiary-color);
+}
+
+.hm-form__title{
+    font-size: 40px;
+    font-weight: 1000;
+    margin: 0;
+}
+
+.hm-form__subtitle{
+    font-size: 25px;
+    font-weight: 1000;
+    margin: 0;
+}
+
+.hm-form__info{
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.hm-form__text{
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.hm-form__container{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+        align-items: start;
+
+}
+
+.hm-form__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.hm-form__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    grid-template-areas:
+        'a b'
+        'c .';
+        margin-top: 15px;
+}
+
+.hm-form__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.hm-form__item--a{
+    grid-area: a;
+}
+
+.hm-form__item--b{
+    grid-area: b;
+}
+
+.hm-form__item--c{
+    grid-area: c;
+}
+
+.hm-form__right{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.hm-form__box{
+    min-height: 420px;
+}
+
+.hm-form__content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hm-form__input{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 85%;
+    text-align: left;
+    border-radius: 10px;
+    background-color: rgba(77, 77, 77, 0.5);
+    color: var(--quaternary-color);
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.hm-form__select{
+    width:max-content;
+    padding-right: 20px;
+}
+
+.hm-form__option{
+    background-color: var(--primary-color);
+}
+
+.hm-form__message{
+    width:max-content;
+    min-height: 70px;
+    padding: 10px;
+    padding-right: 40px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 85%;
+    text-align: left;
+    border-radius: 10px;
+    background-color: rgba(77, 77, 77, 0.5);
+    color: var(--quaternary-color);
+    font-size: 16px;
+    transition: 0.2s;
+    font-family: var(--font);
+}
+
+.hm-form__checkbox{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hm-form__button{
+    text-decoration: none;
+    background-color: var(--tertiary-color);
+    color: var(--main-black);
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-top: 40px; 
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hm-form__button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px var(--hm-main-color);
+    color: var(--primary-color);
+}
+
+
 /* #endregion */
 
 /* #region Web Supercopa */
@@ -2633,13 +2868,16 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 .le-matches__imgs{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
     align-items: center;
     border-bottom: solid 1px var(--main-black);
 }
 
 .le-matches__img{
     width: 50%;
+    max-width: 70px;
+    margin-bottom: 15px;
 }
 
 
@@ -2684,7 +2922,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .le-news__item{
-    background-image: url(/imagenes/liga/thumb1.png);
     min-height: 200px;
     display: flex;
     flex-direction: column;
@@ -2692,23 +2929,29 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: start;
     border-radius: 10px;
     padding: 20px;
+    background-size: cover;
+    text-decoration: none;
     cursor: pointer;
 }
 
 .le-news__item--a{
     grid-area: a;
+    background-image: url(/imagenes/liga/news1.jpeg);
 }
 
 .le-news__item--b{
     grid-area: b;
+    background-image: url(/imagenes/liga/news2.jpeg);
 }
 
 .le-news__item--c{
     grid-area: c;
+    background-image: url(/imagenes/liga/news3.jpeg);
 }
 
 .le-news__item--d{
     grid-area: d;
+    background-image: url(/imagenes/liga/news4.jpeg);
 }
 
 .le-news__item::before {
@@ -2718,8 +2961,8 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.4) 40%,
-        rgba(0, 0, 0, 0.1) 70%,
+        rgba(0, 0, 0, 0.6) 40%,
+        rgba(0, 0, 0, 0.25) 70%,
         transparent 100%
     );
     z-index: 1;
@@ -2797,7 +3040,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .le-moments__video {
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     transition: opacity 0.5s ease-in-out;
 }

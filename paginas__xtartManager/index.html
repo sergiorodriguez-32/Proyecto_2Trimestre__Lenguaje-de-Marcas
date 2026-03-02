@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Xtart Manager</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/stylesQuerys.css">
 </head>
 
 <body>
-
     <header class="header">
 
         <div class="header__left">
@@ -23,7 +23,8 @@
                 <div class="header__nav__item">
                     <a href="" class="header__link header__link--hm">Competiciones</a>
                     <div class="header__dropdown">
-                        <a href="/paginas/Copa_del_Rey/CopaDelRey.html" class="header__dropdown__link header__dropdown__link--hm">Copa
+                        <a href="/paginas/Copa_del_Rey/CopaDelRey.html"
+                            class="header__dropdown__link header__dropdown__link--hm">Copa
                             del Rey</a>
                         <a href="" class="header__dropdown__link header__dropdown__link--hm">SuperCopa</a>
                         <a href="" class="header__dropdown__link header__dropdown__link--hm">Liga Española</a>
@@ -50,7 +51,6 @@
         </div>
 
     </section>
-
 
     <section class="hm-copaDelRey">
 
@@ -102,43 +102,89 @@
         </div>
     </section>
 
+    <section class="hm-liga">
+        <div class="hm-liga__container">
+            <div class="hm-liga__left">
+                <h1 class="hm-liga__title">Liga Española</h1>
+                <h2 class="hm-liga__text">Sigue todos los partidos y goles de la temporada</h2>
+                <a href="paginas/Liga.html" class="hm-liga__button">Ver la Liga</a>
+            </div>
+            <div class="hm-liga__right">
+                <img src="/imagenes/index/liga.jpg" alt="" class="hm-liga__img">
+            </div>
+        </div>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section class="hm-form">
+        <div class="hm-form__container">
+            <div class="hm-form__left">
+                <h1 class="hm-form__title">Contact us</h1>
+                <p class="hm-form__text">Para contactar con nosotros usa estos datos o mandanos un correo</p>
+                <div class="hm-form__grid">
+                    <div class="hm-form__item hm-form__item--a">
+                        <h2 class="hm-form__subtitle">Email</h2>
+                        <p class="hm-form__text">Mandanos un email a:</p>
+                        <h2 class="hm-form__info">hey@xtartmanager.com</h2>
+                    </div>
+                    <div class="hm-form__item hm-form__item--b">
+                        <h2 class="hm-form__subtitle">Teléfono</h2>
+                        <p class="hm-form__text">Llámanos al:</p>
+                        <h2 class="hm-form__info">+34 910 63 46 83</h2>
+                    </div>
+                    <div class="hm-form__item hm-form__item--c">
+                        <h2 class="hm-form__subtitle">Dirección</h2>
+                        <p class="hm-form__text">Visítanos en:</p>
+                        <h2 class="hm-form__info">29348 Calle Futbol, 35 <br> Madrid, Madrid</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="hm-form__right">
+                <h2 class="hm-form__subtitle">¡Mándanos un mensaje!</h2>
+                <div class="hm-form__box">
+                    <div class="hm-form__content">
+                        <div class="hm-form__name">
+                            <h2 class="hm-form__info">Nombre*</h2>
+                            <input class="hm-form__input" type="text" placeholder="María">
+                        </div>
+                        <div class="hm-form__name">
+                            <h2 class="hm-form__info">Apellidos*</h2>
+                            <input class="hm-form__input" type="text" placeholder="García">
+                        </div>
+                    </div>
+                    <div class="hm-form__content">
+                        <div>
+                            <h2 class="hm-form__info">Correo electrónico*</h2>
+                            <input class="hm-form__input" type="text" placeholder="ejemplo@email.com">
+                        </div>
+                        <div>
+                            <h2 class="hm-form__info">Asunto</h2>
+                            <select class="hm-form__input hm-form__select" name="" id="" required>
+                                <option class="hm-form__option" value="" selected disabled>Selecciona un asunto</option>
+                                <option class="hm-form__option" value="">Copa del Rey</option>
+                                <option class="hm-form__option" value="">Supercopa</option>
+                                <option class="hm-form__option" value="">Liga Española</option>
+                                <option class="hm-form__option" value="">Equipos</option>
+                                <option class="hm-form__option" value="">Partidos</option>
+                                <option class="hm-form__option" value="">Otros</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="hm-form__info">Mensaje</h2>
+                        <textarea class="hm-form__message" name="" id=""
+                            placeholder="Cuéntanos en qué podemos ayudarte."></textarea>
+                    </div>
+                    <div>
+                        <label class="hm-form__checkbox" for="">
+                            <input type="checkbox" name="" id="">
+                            <p>He leído y acepto la política de privacidad</p>
+                        </label>
+                    </div>
+                    <a class="hm-form__button" href="">Enviar mensaje</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="footer">
 
@@ -259,10 +305,6 @@
         </div>
 
     </section>
-
-
-
-
 </body>
 
 </html>
