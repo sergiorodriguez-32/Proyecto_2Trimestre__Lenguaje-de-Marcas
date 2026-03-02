@@ -2020,6 +2020,11 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     gap: 30px;
 }
 
+.sc-boxButton__know{
+    grid-column: 1;
+    grid-row: 2;
+}
+
 .sc-button{
     background-color: var(--sc-main-color);
     border-radius: 40px;
@@ -2036,7 +2041,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     padding: 30px;
 }
 
-.sc-a{ /*si se pudiera a lo mejor sc-link queda mejor q solo a*/
+.sc-link{
     text-decoration: none;
     color: var(--main-white);
 }
@@ -2103,15 +2108,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-news__imgBig{ /*diferencia actual entre  imgBig y img -- a nivel estilo, me refiero -- habría q unificar*/
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-
-}
-
 .sc-news__img{
     width: 100%;
     height: 100%;
@@ -2127,7 +2123,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     grid-template-columns: repeat(4, 1fr);
     padding: 20px;
     gap: 20px;
-    grid-auto-rows: 350px;
+    grid-auto-rows: 320px;
     padding-top: 0;
 }
 
@@ -2138,7 +2134,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-radius: 20px;
     display: grid;
     grid-template-rows:  40% 60%;
-    height: 100%;
     overflow: hidden;
 
 }
@@ -2146,10 +2141,17 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 .sc-article:hover {
     transform: scale(1.01);
     background-color: var(--tertiary-color);
-    
 }
 
+.sc_linkBox{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
+.sc_linkBox:visited {
+    color: inherit;
+}
 
 .sc-article--1{
     grid-column: span 2;
@@ -2164,19 +2166,16 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 .sc-article__content{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
     padding: 15px;
 }
 
 .sc-article__title{
     font-weight: 500;
-    text-align: start;
     margin: 0;
     padding: 0;
     color: var(--sc-main-color);
 }
-
-
 
 .sc-article__date{
     font-weight: 400;
@@ -2189,7 +2188,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 .sc-article__text{
     font-weight: 400;
     padding: 0;
-    text-align: start;
+    
 }
 
 /* -----------------Know----------------- */
@@ -2200,6 +2199,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     align-items: center;
     flex-direction: column;
     margin-top: 30px;
+    width: 100%;
 }
 
 .sc-know__title{
@@ -2220,17 +2220,34 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-know__box2{ /* sc-know__card o sc-know__container podría ser ??? porq tengan más sentido las etiquetas, box2 en este caso me parece un poco ambiguo, pero tmpo esta  mas asiq se puede quedar así*/
+.sc-know__container{ 
     border: 1px solid var(--sc-main-color);
     border-radius: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     padding: 20px;
+    align-items: start;
 }
 
-.sc-know__boxImg{ /*sc-know__img -- se puede, know NO tiene más imagenes*/
+.sc-know__content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.sc-know__imageContainer {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.sc-know__img{
     border-radius: 50%;
-    height: 250px; width: 250px;
-    padding: 20px;
+    height: 300px; width: 300px;
+    object-fit: cover;
 }
 
 .sc-know__highlighted{
@@ -2240,7 +2257,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 
 }
 
-.sc-know__newsTitle{ /*sc-know__title -- se puede, know NO tiene más titulos */
+.sc-know__title--H2{
     font-weight: 400;
 }
 
@@ -2348,12 +2365,12 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-bottom: 1px solid var(--tertiary-color);
 }
 
-.sc-match__goalText{ /*debería ser goals -- puede quedarse sc-match__goalsText o sc-match__goal__text pero el estilo superior es goals NO goal*/
+.sc-match__goalText{
     font-size: 20px;
     color: var(--sc-contrast-color);
 }
 
-.sc-match__goalNumber{ /*debería ser goals -- puede quedarse sc-match__goalsNumber o sc-match__goal__number pero el estilo superior es goals NO goal*/
+.sc-match__goalNumber{
     font-size: 40px;
     font-weight: bold;
     margin: 0;
@@ -2396,7 +2413,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     gap: 150px;
 }
 
-.sc-match__refereeTitle{ /*visualmente no hay diferencia entre refereeTitle y AlignmentTitle -- no se podría hacer sc-match__title -- y poner las diferencias entre los dos a los div de fuera o abajo??? */
+.sc-match__refereeTitle{
     display: flex;
     font-size: 25px;
     font-weight: bold;
@@ -2414,7 +2431,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     color: var(--sc-contrast-color);
 }
 
-.sc-match__Alignment{ /*es una tontería pero si están todos en minúscula no debería haber 1 en mayúsculas sc-match__alignment */
+.sc-match__alignment{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2422,18 +2439,18 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     border-left: 1px solid var(--tertiary-color);
 }
 
-.sc-match__AlignmentTitle{ /*lo comentado en referee*/
+.sc-match__alignmentTitle{
     font-size: 25px;
 }
 
-.sc-match__AlignmentImg{
+.sc-match__alignmentImg{
     height: 550px;
 }
 
 
 /* -----------------Football Teams----------------- */
 
-.sc-footballTeams{ /*está bien así pero podría ser tmb solo sc-teams */
+.sc-footballTeams{
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -2448,7 +2465,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     padding: 30px;
     position: relative;
     overflow: hidden;
-
 }
 
 .sc-footballTeams__tittle{
@@ -2552,7 +2568,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     transform: scale(1.1);
     background-color: var(--hm-main-color);
 }
-
 
 .p-arrow{
     font-size: 24px;
@@ -2660,7 +2675,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     right: 22px;
 }
 
-.p-days__a{ /*p-days__link porfasplis*/
+.p-days__link{
     text-decoration: none;
     color: var(--main-black);
 
@@ -2691,7 +2706,6 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     
 }
 
-
 .p-matches__h3{
     font-size: 30px;
     margin-bottom: 0;
@@ -2711,7 +2725,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
     width: 200px; height: 100px;
 }
 
-.p-matchez__logo{ /*p-matches__logo -- falta por ir rápido :P*/
+.p-matches__logo{
     display: flex;
     align-items: center;
     gap: 15px;
