@@ -5,7 +5,7 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #d8d8d8; /*#d8d8d8*/ /*#f1f1f1*/ 
+    background-color: #f1f1f1; /*#d8d8d8*/ /*#f1f1f1*/ 
     overflow-x: hidden;
     height: 100%;
     font-family: var(--font);
@@ -1534,7 +1534,7 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 }
 
 .hm-hero__container {
-    height: 600px;
+    height: 400px;
     width: 100%;
     background:
         url(/imagenes/index/background.png);
@@ -1744,6 +1744,106 @@ ADEMÁS es mejor ponerlos todos seguidos por limpieza del código, facilita visu
 .hm-liga__img{
     max-width: 100%;
     max-height: 100%;
+}
+
+/* ------- SECCIÓN LA SUPERCOPA ------- */
+
+.hm-superCopa{
+    background-color: var(--sc-main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.hm-superCopa__box{
+    gap: 50px;
+    display: flex;
+}
+
+.hm-superCopa__page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hm-superCopa__boxNews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hm-article{
+    background-color: var(--main-white);
+    border-radius: 15px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hm-article__img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hm-article__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.hm-article__title{
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: var(--sc-main-color);
+}
+
+.hm-article__date{
+    font-weight: 400;
+    color: var(--sc-contrast-color);
+}
+
+.hm-boxButton{
+    display: flex;
+}
+
+.hm-button{
+    background-color: var(--main-white);
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hm-button:hover {
+    transform: translateY(-2px);
+    background: var(--hm-main-color);
+}
+
+
+.hm-link{
+    text-decoration: none;
+    color: var(--sc-main-color);
+    font-weight: bold;
+}
+
+.hm-superCopa__title{
+    color: var(--main-white);
+    font-size: 40px;
+    font-weight: 1000;
+    margin-bottom: 0;
+}
+
+.hm-superCopa__text{
+    color: var(--main-white);
+    font-size: 20px;
 }
 
 /* ------- FORMULARIO HOME ------- */
