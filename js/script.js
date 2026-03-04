@@ -135,6 +135,7 @@ document.querySelectorAll(".sc-footballTeams__box, .p-days__box")
         container.addEventListener("mouseleave", iniciarAutoplay);
     });
 
+
     // LIGA
 
 // Sección de Partidos
@@ -224,14 +225,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const newVideo = this.dataset.video;
 
-            // Evitar cambiar si ya está activo
             if (video.src.includes(newVideo)) return;
 
-            // Quitar active
             buttons.forEach(btn => btn.classList.remove("active"));
             this.classList.add("active");
 
-            // Fade out
             video.classList.add("fade-out");
 
             setTimeout(() => {
@@ -245,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     video.removeEventListener("canplay", handler);
                 });
 
-            }, 500); // debe coincidir con el CSS (0.5s)
+            }, 500);
 
         });
     });

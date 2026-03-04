@@ -940,12 +940,10 @@ html {
 }
 
 .cdr-campo-mensaje {
-    /* cdr-campo__mensaje */
     width: 100%;
 }
 
 .cdr-campo-placeholder {
-    /* cdr-campo__placeholder */
     width: 100%;
     padding: 10px;
     font-size: 14px;
@@ -955,14 +953,12 @@ html {
 }
 
 .cdr-campo-boton {
-    /* cdr-campo__boton */
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
 .cdr-campo--button {
-    /* cdr-campo__buttom */
     padding: 12px 24px;
     background-color: var(--main-black);
     color: var(--tertiary-color);
@@ -971,7 +967,6 @@ html {
 }
 
 .cdr-campo--button:hover {
-    /* cdr-campo__buttom */
     background-color: var(--cdr-main-color);
     cursor: pointer;
 }
@@ -1026,7 +1021,6 @@ html {
 }
 
 .eq-carrousel-container {
-    /*eq-carrousel__container*/
     position: relative;
     width: 95%;
     max-width: 1400px;
@@ -1129,7 +1123,6 @@ html {
 }
 
 .eq-carrousel-btn {
-    /*eq-carrousel__btn*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1149,12 +1142,10 @@ html {
 }
 
 .eq-carrousel-btn--left {
-    /*eq-carrousel__btn--left*/
     left: 10px;
 }
 
 .eq-carrousel-btn--right {
-    /*eq-carrousel__btn--right*/
     right: 10px;
 }
 
@@ -1566,14 +1557,12 @@ html {
 }
 
 .hm-copaDelRey__ticker-track {
-    /*hm-copaDelRey__ticker__track*/
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
 }
 
 .hm-copaDelRey__ticker-text {
-    /*hm-copaDelRey__ticker__text*/
     display: inline-block;
     white-space: nowrap;
     font-weight: 900;
