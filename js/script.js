@@ -1,3 +1,6 @@
+
+// Rotación de los equipos y jugadores en la pagina de equipos
+
 window.addEventListener('load', () => {
     const carousels = document.querySelectorAll('.eq-carrousel-container');
 
@@ -136,7 +139,7 @@ document.querySelectorAll(".sc-footballTeams__box, .p-days__box")
     });
 
 
-    // LIGA
+// LIGA
 
 // Sección de Partidos
 
@@ -145,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnPrev = document.querySelector(".le-matches__arrow--left");
     const btnNext = document.querySelector(".le-matches__arrow--right");
     let slides = Array.from(track.children);
-    
+
     const gap = 30;
     const slideWidth = slides[0].offsetWidth + gap;
     const totalOriginalSlides = slides.length;
@@ -153,11 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
     slides.forEach(slide => {
         const cloneFirst = slide.cloneNode(true);
         const cloneLast = slide.cloneNode(true);
-        track.appendChild(cloneFirst); 
-        track.insertBefore(cloneLast, slides[0]); 
+        track.appendChild(cloneFirst);
+        track.insertBefore(cloneLast, slides[0]);
     });
 
-    let index = totalOriginalSlides; 
+    let index = totalOriginalSlides;
     let isAnimating = false;
 
     function updatePosition(animate = true) {
@@ -183,12 +186,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     track.addEventListener("transitionend", () => {
         isAnimating = false;
-        
+
         if (index >= totalOriginalSlides * 2) {
             index = totalOriginalSlides;
             updatePosition(false);
         }
-        
+
         if (index <= totalOriginalSlides - 1) {
             if (index === 0 || index < totalOriginalSlides) {
                 if (index === 0) index = totalOriginalSlides;
@@ -196,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-        
+
         if (index >= totalOriginalSlides * 2) {
             index = totalOriginalSlides;
             updatePosition(false);
@@ -215,13 +218,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Sección de Momentos
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const video = document.getElementById("le-mainVideo");
     const buttons = document.querySelectorAll(".le-moments__button");
 
     buttons.forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
 
             const newVideo = this.dataset.video;
 
